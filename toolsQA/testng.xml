@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <listeners>
+	 <listener class-name="com.toolsQA.listeners.Listeners" />
+  </listeners>
+  
+  <test thread-count="5" name="ElementsTest">
+    <classes>
+      <class name="com.toolsQA.testCases.ElementsTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="AlertsWindowsTest">
+    <classes>
+      <class name="com.toolsQA.testCases.AlertsWindowsFramesTest"/>
+    </classes>
+  </test>
+  <test thread-count="5" name="InteractionTest">
+    <classes>
+      <class name="com.toolsQA.testCases.InteractionsTest"/>
+    </classes>
+  </test>
+  <test thread-count="5" name="FormsTest">
+    <classes>
+      <class name="com.toolsQA.testCases.FormsPageTest"/>
+    </classes>
+  </test>
+  <test thread-count="5" name="WidgetsTest">
+    <classes>
+      <class name="com.toolsQA.testCases.WidgetsPageTest"/>
+    </classes>
+  </test>
+  
+</suite> <!-- Suite -->
