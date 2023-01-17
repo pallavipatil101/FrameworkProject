@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="testcases.Test_Menu">
+        <methods>
+          <include name="hover_over_menu3"/>
+          <include name="hover_over_menu2"/>
+          <include name="hover_over_menu1"/>
+          <include name="hover_over_submenu_item1"/>
+          <include name="navigate_to_menu"/>
+          <include name="hover_over_menu2_item2"/>
+          <include name="hover_over_submenu"/>
+          <include name="hover_over_submenu_item2"/>
+          <include name="hover_over_menu2_item1"/>
+        </methods>
+      </class> <!-- testcases.Test_Menu -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
