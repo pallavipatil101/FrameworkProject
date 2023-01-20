@@ -1,11 +1,13 @@
 package actions;
 
 import base.Base;
+import excel.utility.ExcelReader;
 import locators.TextBox_locators;
 
 public class TextBox extends Base{
 	
 	TextBox_locators tpl = new TextBox_locators();
+	ExcelReader e = new ExcelReader(System.getProperty("user.dir")+"/src/test/resources/Data_DemoQA.xlsx");
 	
 	public void verify_FullName_label() {
 		verify_text("Full Name", tpl.fullName_label());
@@ -24,19 +26,19 @@ public class TextBox extends Base{
 	}
 	
 	public void enter_FullName() {
-		send(tpl.userName(), "Pallavi Patil");
+		send(tpl.userName(), e.getCellData("Textbox", "Values", 1));
 	}
 	
 	public void enter_Email() {
-		send(tpl.userEmail(), "pallavi.patil@joshsoftware.com");
+		send(tpl.userEmail(), e.getCellData("Textbox", "Values", 2));
 	}
 	
 	public void enter_CurrentAddress() {
-		send(tpl.currentAddress(), "Pune");
+		send(tpl.currentAddress(), e.getCellData("Textbox", "Values", 3));
 	}
 	
 	public void enter_PermanentAddress() {
-		send(tpl.permanentAddress(), "Miraj");
+		send(tpl.permanentAddress(), e.getCellData("Textbox", "Values", 4));
 	}
 	
 	

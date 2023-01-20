@@ -21,7 +21,7 @@ public class Draggable_locators extends Base{
 		return driver.findElement(By.id("restrictedX"));
 	}
 	
-	public WebElement draggableYAxiz() {
+	public WebElement draggableYAxis() {
 		return driver.findElement(By.id("restrictedY"));
 	}
 	

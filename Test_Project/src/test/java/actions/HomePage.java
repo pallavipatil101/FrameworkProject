@@ -30,4 +30,10 @@ public class HomePage extends Base {
 		hpl.widgets().click();
 		return new Widgets();
 	}
+	
+	public Interactions navigate_to_interactions() {
+		scroll_to_element(hpl.interactions());
+		hpl.interactions().click();
+		return new Interactions();
+	}
 }

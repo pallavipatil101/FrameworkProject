@@ -16,4 +16,6 @@ public class Links_locators extends Base{
 	public WebElement apiResponse() {
 		return driver.findElement(By.id("linkResponse"));
 	}
+	
+	
 }

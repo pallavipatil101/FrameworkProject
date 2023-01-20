@@ -16,18 +16,13 @@ public class Test_BrokenLinks extends Base{
 	}
 	
 	@Test(priority = 1)
-	public void click_Valid_Link() {
-		bl.click_Valid_Link();
+	public void findBrokenLink() {
+		bl.findBrokenLink();
 	}
 	
 	@Test(priority = 2)
-	public void click_Broken_Link() {
-		bl.click_Broken_Link();
-	}
-	
-	@Test(priority = 3)
-	public void verify_Broken_Link() {
-		bl.verifyBrokenLink();
+	public void findBrokenImages() {
+		bl.findBrokenImages();
 	}
 	
 }

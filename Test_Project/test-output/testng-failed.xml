@@ -3,19 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.Test_Menu">
+      <class name="testcases.Test_Windows">
         <methods>
-          <include name="hover_over_menu3"/>
-          <include name="hover_over_menu2"/>
-          <include name="hover_over_menu1"/>
-          <include name="hover_over_submenu_item1"/>
-          <include name="navigate_to_menu"/>
-          <include name="hover_over_menu2_item2"/>
-          <include name="hover_over_submenu"/>
-          <include name="hover_over_submenu_item2"/>
-          <include name="hover_over_menu2_item1"/>
+          <include name="verify_msgwindow_text"/>
+          <include name="teardown"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- testcases.Test_Menu -->
+      </class> <!-- testcases.Test_Windows -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

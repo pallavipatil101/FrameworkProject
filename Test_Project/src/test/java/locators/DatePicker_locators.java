@@ -29,11 +29,11 @@ public class DatePicker_locators extends Base{
 		return driver.findElement(By.id("dateAndTimePickerInput"));
 	}
 	
-	public List<WebElement> calender1MonthList() {
+	public List<WebElement> calender2MonthList() {
 		return driver.findElements(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/div"));
 	}
 	
-	public List<WebElement> calender1YearList() {
+	public List<WebElement> calender2YearList() {
 		return driver.findElements(By.xpath("//*[@id='dateAndTimePicker']/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/div"));
 	}
 	

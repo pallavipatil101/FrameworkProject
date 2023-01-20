@@ -33,12 +33,28 @@ public class Droppable_locators extends Base{
 		return driver.findElement(By.id("notRevertable"));
 	}
 	
-	public WebElement droppableCommon() {
+	public WebElement droppableSimple() {
 		return driver.findElement(By.id("droppable"));
 	}
 	
-	public WebElement droppedMessageCommon() {
+	public WebElement droppableAccept() {
+		return driver.findElement(By.xpath("//*[@id=\"acceptDropContainer\"]/div[2]"));
+	}
+	
+	public WebElement droppableRevert() {
+		return driver.findElement(By.xpath("//*[@id='revertableDropContainer']/div[2]"));
+	}
+	
+	public WebElement droppedMessageSimple() {
 		return driver.findElement(By.xpath("//*[@id='droppable']/p"));
+	}
+	
+	public WebElement droppedMessageAccept() {
+		return driver.findElement(By.xpath("//*[@id=\"acceptDropContainer\"]/div[2]/p"));
+	}
+	
+	public WebElement droppableMessageRevert() {
+		return driver.findElement(By.xpath("//*[@id='revertableDropContainer']/div[2]/p"));
 	}
 	
 	public WebElement draggablePreventPropagation() {
@@ -49,15 +65,32 @@ public class Droppable_locators extends Base{
 		return driver.findElement(By.id("greedyDropBox"));
 	}
 	
+	public WebElement outerGreedyMessage() {
+		return driver.findElement(By.xpath("//*[@id='greedyDropBox']/p"));
+	}
+	
 	public WebElement droppableOuterNotGreedy() {
 		return driver.findElement(By.id("notGreedyDropBox"));
+	}
+	
+	public WebElement outerNotGreedyMessage() {
+		return driver.findElement(By.xpath("//*[@id='notGreedyDropBox']/p"));
 	}
 	
 	public WebElement droppableInnerGreedy() {
 		return driver.findElement(By.id("greedyDropBoxInner"));
 	}
 	
+	public WebElement innerGreedyMessage() {
+		return driver.findElement(By.xpath("//*[@id='greedyDropBoxInner']/p"));
+	}
+	
 	public WebElement droppableInnerNotGreedy() {
 		return driver.findElement(By.id("notGreedyInnerDropBox"));
 	}
+	
+	public WebElement innerNotGreedyMessage() {
+		return driver.findElement(By.xpath("//*[@id='notGreedyInnerDropBox']/p"));
+	}
+	
 }

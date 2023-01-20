@@ -1,5 +1,6 @@
 package testcases;
 
+
 import org.testng.annotations.Test;
 
 import actions.HomePage;
@@ -107,4 +108,8 @@ public class Test_PracticeForm extends Base{
 		pf.enter_address();
 	}
 	
+	@Test(priority = 19)
+	public void select_subjects() {
+		pf.select_subjects();
+	}
 }

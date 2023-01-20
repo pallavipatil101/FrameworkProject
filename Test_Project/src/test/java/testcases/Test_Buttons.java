@@ -9,7 +9,7 @@ import base.Base;
 public class Test_Buttons extends Base {
 	public Buttons btn = new Buttons();
 	
-	@Test
+	@Test(priority = 0)
 	public void navigateToButtons() {
 		HomePage hp = new HomePage();	
 		//hp.navigate_to_Elements().navigate_to_buttons().click_Buttons(); 
@@ -17,32 +17,32 @@ public class Test_Buttons extends Base {
 	}
 	
 	
-	@Test(priority = 0)
+	@Test(priority = 1)
 	public void doubleClick() {
 		btn.click_DoubledClick_Btn();
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 2)
 	public void rightClick() {
 		btn.click_RightClick_Btn();
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 3)
 	public void dynamicClick() {
 		btn.click_Dynamic_Btn();
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 4)
 	public void verifyDoubleClick() {
 		btn.verify_Double_Click();
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void verifyRightClick() {
 		btn.verify_Right_Click();
 	}
 	
-	@Test(priority = 5)
+	@Test(priority = 6)
 	public void verifyDynamicClick() {
 		btn.verify_Dynamic_Click();
 	}

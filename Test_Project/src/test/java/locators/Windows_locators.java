@@ -28,6 +28,6 @@ public class Windows_locators extends Base {
 	}
 	
 	public WebElement msgWindowHeading() {
-		return driver.findElement(By.xpath("html/body/text()"));
+		return driver.findElement(By.xpath("html/body"));
 	}
 }

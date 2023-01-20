@@ -1,13 +1,16 @@
 package actions;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import base.Base;
+import excel.utility.ExcelReader;
 import locators.PracticeForm_locators;
 
 public class PracticeForm extends Base{
 	
+	ExcelReader e = new ExcelReader(System.getProperty("user.dir")+"/src/test/resources/Data_DemoQA.xlsx");
 	PracticeForm_locators pfl = new PracticeForm_locators();
 	public Select select;
 	
@@ -48,15 +51,15 @@ public class PracticeForm extends Base{
 	}
 	
 	public void enter_first_name() {
-		send(pfl.firstName(), "Pallavi");
+		send(pfl.firstName(), e.getCellData("Form", "Values", 1));
 	}
 	
 	public void enter_last_name() {
-		send(pfl.lastName(), "Patil");
+		send(pfl.lastName(), e.getCellData("Form", "Values", 2));
 	}
 	
 	public void enter_email() {
-		send(pfl.email(), "pallavi.patil@joshsoftware.com");
+		send(pfl.email(), e.getCellData("Form", "Values", 3));
 	}
 	
 	public void select_gender() {
@@ -74,7 +77,7 @@ public class PracticeForm extends Base{
 	}
 	
 	public void enter_mobile() {
-		send(pfl.mobile(), "9898878767");
+		send(pfl.mobile(), e.getCellData("Form", "Values", 4));
 	}
 	
 	public void select_birthdate() {
@@ -103,10 +106,19 @@ public class PracticeForm extends Base{
 	
 	
 	public void enter_address() {
-		send(pfl.address(), "Balewadi, Pune");
+		send(pfl.address(), e.getCellData("Form", "Values", 6));
 	}
 	
 	public void upload_photo() {
 		send(pfl.uploadPhoto(), System.getProperty("user.dir")+"/src/test/resources/UploadPhoto.jpeg");
+	}
+	
+	public void select_subjects() {
+		scroll_to_element(pfl.subject());
+		action().moveToElement(pfl.subject()).click().sendKeys("m").build().perform();
+		scroll_to_element(pfl.maths());
+		action().moveToElement(pfl.maths()).click().build().perform();
+		action().moveToElement(pfl.subject()).click().sendKeys("m").build().perform();
+		action().moveToElement(pfl.chemistry()).click().build().perform();
 	}
 }

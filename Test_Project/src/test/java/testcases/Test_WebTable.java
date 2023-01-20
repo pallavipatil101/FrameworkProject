@@ -21,6 +21,11 @@ public class Test_WebTable extends Base{
 	}
 	
 	@Test(priority = 2)
+	public void submitData() {
+		wt.submit_form();
+	}
+	
+	@Test(priority = 3)
 	public void verifyEdits() {
 		wt.verify_edit();
 	}

@@ -70,7 +70,15 @@ public class PracticeForm_locators extends Base{
 	}
 	
 	public WebElement subject() {
-		return driver.findElement(By.xpath("//*[@id=\\\"subjectsContainer\\\"]/div/div[1]"));
+		return driver.findElement(By.xpath("//*[@id='subjectsContainer']/div/div[1]"));
+	}
+	
+	public WebElement maths() {
+		return driver.findElement(By.id("react-select-2-option-0"));
+	}
+	
+	public WebElement chemistry() {
+		return driver.findElement(By.id("react-select-2-option-1"));
 	}
 	
 	public List<WebElement> genderRadio(){
