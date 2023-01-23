@@ -1,5 +1,7 @@
 package actions;
 
+import java.time.Duration;
+
 import org.openqa.selenium.Point;
 import org.testng.Assert;
 
@@ -21,6 +23,7 @@ public class Slider extends Base{
 	}
 	
 	public void slider_location_after_drag() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		locationAfter = sl.sliderButton().getLocation();
 	}
 	

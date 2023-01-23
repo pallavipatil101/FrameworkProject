@@ -2,11 +2,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-	 <listener class-name="listener.Listeners" />
-  </listeners>
-  <test thread-count="5" name="Test">
+	 	<listener class-name="listener.Listeners" />
+  	</listeners>
+  	
+  <test name="Textbox">
     <classes>
-      <class name="testcases.Test_PracticeForm"/>
+      <class name="testcases.Textbox_Test"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> 
+  
+  <test name="Checkbox">
+    <classes>
+      <class name="testcases.Checkbox_Test"/>
+    </classes>
+  </test> 
+</suite> 

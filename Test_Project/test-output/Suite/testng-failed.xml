@@ -4,15 +4,15 @@
   <listeners>
     <listener class-name="listener.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Checkbox(failed)">
     <classes>
-      <class name="testcases.Test_PracticeForm">
+      <class name="testcases.Checkbox_Test">
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="select_subjects"/>
+          <include name="verifySelectedCheckBox"/>
         </methods>
-      </class> <!-- testcases.Test_PracticeForm -->
+      </class> <!-- testcases.Checkbox_Test -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Checkbox(failed) -->
 </suite> <!-- Failed suite [Suite] -->

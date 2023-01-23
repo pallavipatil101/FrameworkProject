@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.Test_Windows">
+      <class name="testcases.Test_SelectMenu">
         <methods>
-          <include name="verify_msgwindow_text"/>
+          <include name="one_dropdown"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- testcases.Test_Windows -->
+      </class> <!-- testcases.Test_SelectMenu -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
