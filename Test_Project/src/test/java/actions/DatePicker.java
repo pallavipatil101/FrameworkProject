@@ -1,8 +1,5 @@
 package actions;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -31,17 +28,13 @@ public class DatePicker extends Base{
 		dp.calender1Date().click();
 	}
 	
-	public void select_calender2_date() {
-		dp.calender2().clear();
-		dp.calender2().sendKeys("March 11, 1996 9:00 AM");
-	}
-	
 	public void click_on_calender2() {
 		dp.calender2().click();
 		
 	}
 	
 	public void select_month_calender2() {
+		dp.calender2MonthBtn().click();
 		for(WebElement m : dp.calender2MonthList())
 		{
 			waiting().until(ExpectedConditions.elementToBeClickable(m));
@@ -54,10 +47,16 @@ public class DatePicker extends Base{
 	}
 	
 	public void select_year_calender2() {
+		dp.calender2YearBtn().click();
+		for(int i=1; i<24; i++)
+		{
+			dp.calender2YearArrow().click();
+		}
+		
 		for(WebElement m : dp.calender2YearList())
 		{
 			waiting().until(ExpectedConditions.elementToBeClickable(m));
-			if(m.getText().equals("2024"))
+			if(m.getText().equals("1996"))
 			{
 				m.click();
 				break;
@@ -66,6 +65,17 @@ public class DatePicker extends Base{
 	}
 	
 	public void select_date_calender2() {
-		//dp.calender1Date().click();
+		dp.calender2Date().click();
+	}
+	
+	public void select_time_calender2() {
+		for(WebElement time : dp.calender2TimeList())
+		{
+			if(time.getText().equals("16:30"))
+			{
+				time.click();
+				break;
+			}
+		}
 	}
 }

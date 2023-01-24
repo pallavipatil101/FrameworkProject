@@ -102,6 +102,7 @@ public class Droppable extends Base{
 	
 	public void revertable_drag_location_before() {
 		locBefore = drop.draggableRevertable().getLocation();
+		System.out.println("BEFORE"+drop.draggableRevertable().getAttribute("style"));
 	}
 	
 	public void revertable_drag() {
@@ -110,6 +111,7 @@ public class Droppable extends Base{
 	
 	public void revertable_drag_location_after() {
 		locAfter = drop.draggableRevertable().getLocation();
+		System.out.println("AFTER"+drop.draggableRevertable().getAttribute("style"));
 	}
 	
 	public void verify_revertable_drag_location() {

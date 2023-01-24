@@ -5,15 +5,17 @@
 	 	<listener class-name="listener.Listeners" />
   	</listeners>
   	
-  <test name="Textbox">
+  <test name="DemoQA">
     <classes>
       <class name="testcases.Textbox_Test"/>
-    </classes>
-  </test> 
-  
-  <test name="Checkbox">
-    <classes>
       <class name="testcases.Checkbox_Test"/>
+      <class name="testcases.RadioButton_Test"/>
+      <class name="testcases.Webtable_Test"/>
+      <class name="testcases.Buttons_Test"/>
+      <class name="testcases.Links_Test"/>
+      <class name="testcases.BrokenLinks_Test"/>
+      <class name="testcases.UploadDownload_Test"/>
+      <class name="testcases.DynamicProperties_Test"/>
     </classes>
   </test> 
 </suite> 

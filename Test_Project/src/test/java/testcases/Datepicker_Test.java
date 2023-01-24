@@ -35,23 +35,28 @@ public class Datepicker_Test extends Base{
 		dp.select_date_calender1();
 	}
 	
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = true)
 	public void select_calender2() {
 		dp.click_on_calender2();
 	}
 	
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public void select_year_calender2() {
 		dp.select_year_calender2();
 	}
 	
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 7, enabled = true)
 	public void select_month_calender2() {
 		dp.select_month_calender2();
 	}
 	
-	@Test(priority = 5)
-	public void calender2_date_time() {
-		dp.select_calender2_date();
+	@Test(priority = 8, enabled = true)
+	public void select_date_calender2() {
+		dp.select_date_calender2();
+	}
+	
+	@Test(priority = 9)
+	public void select_time_calender2() {
+		dp.select_time_calender2();
 	}
 }

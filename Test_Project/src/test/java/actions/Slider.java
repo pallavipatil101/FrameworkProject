@@ -11,11 +11,11 @@ import locators.Slider_locators;
 public class Slider extends Base{
 	
 	Slider_locators sl = new Slider_locators();
-	public Point locationBefore;
-	public Point locationAfter;
+	public String locationBefore;
+	public String locationAfter;
 	
 	public void slider_location_before_drag() {
-		locationBefore = sl.sliderButton().getLocation();
+		locationBefore = sl.sliderValue().getAttribute("value");
 	}
 	
 	public void dragSlider() {
@@ -24,7 +24,7 @@ public class Slider extends Base{
 	
 	public void slider_location_after_drag() {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		locationAfter = sl.sliderButton().getLocation();
+		locationAfter = sl.sliderValue().getAttribute("value");
 	}
 	
 	public void verify_dragdrop_successful() {

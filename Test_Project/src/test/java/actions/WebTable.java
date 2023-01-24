@@ -30,9 +30,9 @@ public class WebTable extends Base {
 		wpl.email().clear();
 		send(wpl.email(), e.getCellData("Table", "Values", 3));
 		wpl.age().clear();
-		send(wpl.age(),e.getCellData("Table", "Values", 4));
+		send(wpl.age(),e.getData("Table", "Values", 4));
 		wpl.salary().clear();
-		send(wpl.salary(), e.getCellData("Table", "Values", 5));
+		send(wpl.salary(), e.getData("Table", "Values", 5));
 		wpl.department().clear();
 		send(wpl.department(), e.getCellData("Table", "Values", 6));		
 	}

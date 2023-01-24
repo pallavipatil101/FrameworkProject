@@ -4,15 +4,23 @@
   <listeners>
     <listener class-name="listener.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Checkbox(failed)">
+  <test thread-count="5" name="DemoQA(failed)">
     <classes>
-      <class name="testcases.Checkbox_Test">
+      <class name="testcases.RadioButton_Test">
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="verifySelectedCheckBox"/>
+          <include name="verifyDisabledRadio"/>
         </methods>
-      </class> <!-- testcases.Checkbox_Test -->
+      </class> <!-- testcases.RadioButton_Test -->
+      <class name="testcases.Webtable_Test">
+        <methods>
+          <include name="editRow1"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="submitData"/>
+        </methods>
+      </class> <!-- testcases.Webtable_Test -->
     </classes>
-  </test> <!-- Checkbox(failed) -->
+  </test> <!-- DemoQA(failed) -->
 </suite> <!-- Failed suite [Suite] -->

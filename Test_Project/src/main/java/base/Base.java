@@ -1,7 +1,5 @@
 package base;
 
-import static org.testng.Assert.assertEquals;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -23,7 +21,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 public class Base {
@@ -33,7 +33,8 @@ public class Base {
 	public String childwindow;
 	public Properties pro;
 	
-	@BeforeSuite
+	//@BeforeSuite
+	@BeforeClass
 	public void setup() throws IOException {
 		pro = new Properties();
 		String path = System.getProperty("user.dir")+"/src/test/resources/Config.properties";
@@ -125,8 +126,9 @@ public class Base {
 		driver.navigate().back();
 	}
 	
-	@AfterSuite
+	//@AfterSuite
+	@AfterClass
 	public void teardown() {
-		//driver.quit();
+		driver.quit();
 	}
 }

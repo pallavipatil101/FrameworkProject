@@ -1,8 +1,6 @@
 package actions;
 
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
 import base.Base;
 import locators.RadioButton_locators;
 
@@ -32,8 +30,7 @@ public class RadioButton extends Base{
 		{
 			if(radio.getAttribute("for").equals("noRadio"))
 			{
-				//Assert.assertTrue(!radio.isEnabled());
-				System.out.println(radio.isEnabled());
+				isTrue(!radio.isEnabled());
 			}
 		}
 	}

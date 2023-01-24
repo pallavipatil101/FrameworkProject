@@ -11,6 +11,7 @@ public class Selectable extends Base {
 	public void select_all_list_options() {
 		for(WebElement opt : sl.selectableListElements())
 		{
+			scroll_to_element(opt);
 			opt.click();
 		}
 	}
@@ -32,6 +33,7 @@ public class Selectable extends Base {
 	public void select_all_grid_options() {
 		for(WebElement opt : sl.selectableGridElements())
 		{
+			scroll_to_element(opt);
 			opt.click();
 		}
 	}

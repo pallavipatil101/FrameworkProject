@@ -28,6 +28,6 @@ public class Modals_locators extends Base {
 	}
 	
 	public WebElement largeModaltext() {
-		return driver.findElement(By.xpath("/html/body/div[4]/div/div/div[2]/p"));
+		return driver.findElement(By.xpath("//*[@class = 'modal-body']/p"));
 	}
 }

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.Test_SelectMenu">
+      <class name="testcases.Datepicker_Test">
         <methods>
-          <include name="one_dropdown"/>
           <include name="teardown"/>
           <include name="setup"/>
+          <include name="select_month_calender2"/>
         </methods>
-      </class> <!-- testcases.Test_SelectMenu -->
+      </class> <!-- testcases.Datepicker_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

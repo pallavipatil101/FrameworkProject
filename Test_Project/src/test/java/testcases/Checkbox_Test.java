@@ -11,10 +11,10 @@ public class Checkbox_Test extends Base{
 	
 	@Test(priority = 0)
 	public void navigate_to_checkbox() {
-		//HomePage hp = new HomePage();	
-		//hp.navigate_to_Elements().navigate_to_checkbox();
-		Elements e = new Elements();
-		e.navigate_to_checkbox();
+		HomePage hp = new HomePage();	
+		hp.navigate_to_Elements().navigate_to_checkbox();
+		//Elements e = new Elements();
+		//e.navigate_to_checkbox();
 	}
 	
 	@Test(priority = 1)

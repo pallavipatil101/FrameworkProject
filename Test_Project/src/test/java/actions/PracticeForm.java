@@ -77,7 +77,7 @@ public class PracticeForm extends Base{
 	}
 	
 	public void enter_mobile() {
-		send(pfl.mobile(), e.getCellData("Form", "Values", 4));
+		send(pfl.mobile(), e.getData("Form", "Values", 4));
 	}
 	
 	public void select_birthdate() {

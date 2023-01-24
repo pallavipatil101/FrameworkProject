@@ -15,6 +15,6 @@ public class Resizable extends Base{
 	public void resizable_page_contained() {
 		scroll_to_element(rl.resize2());
 		action().moveToElement(rl.resize2()).clickAndHold().build().perform();
-		action().dragAndDropBy(rl.resize2(), 150, 300).build().perform();
+		action().dragAndDropBy(rl.resize2(), 150, 200).build().perform();
 	}
 }
