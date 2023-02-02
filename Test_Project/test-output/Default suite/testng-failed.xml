@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.Datepicker_Test">
+      <class name="testcases.Webtable_Test">
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="select_month_calender2"/>
+          <include name="edit_Row1" invocation-numbers="1 2 3 4 5"/>
         </methods>
-      </class> <!-- testcases.Datepicker_Test -->
+      </class> <!-- testcases.Webtable_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

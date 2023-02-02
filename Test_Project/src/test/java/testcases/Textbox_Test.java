@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import actions.TextBox;
 import actions.HomePage;
 import base.Base;
+import excel.utility.ExcelDataProvider;
 
 public class Textbox_Test extends Base{
 	public TextBox tb = new TextBox();
@@ -17,67 +18,31 @@ public class Textbox_Test extends Base{
 	}
 	
 	@Test(priority = 1)
-	public void verify_Full_Name_Label() {
+	public void verify_labels() {
 		tb.verify_FullName_label();
-	}
-	
-	@Test(priority = 2)
-	public void verify_Email_Label() {
 		tb.verify_Email_label();
-	}
-	
-	@Test(priority = 3)
-	public void verify_CurrentAddress_Label() {
 		tb.verify_Current_Address_Label();
-	}
-	
-	@Test(priority = 4)
-	public void verify_PermanentAddress_Label() {
 		tb.verify_Permanent_Address_Label();
 	}
 	
-	@Test(priority = 5)
-	public void enter_FullName() {
-		tb.enter_FullName();
+	@Test(priority = 2, dataProvider="textboxDP" , dataProviderClass = ExcelDataProvider.class)
+	public void enter_data(String label, String value) {
+		tb.enter_FirstName(label, value);
+		tb.enter_Email(label, value);
+		tb.enter_CurrentAddress(label, value);
+		tb.enter_PermanentAddress(label, value);
 	}
 	
-	@Test(priority = 6)
-	public void enter_Email() {
-		tb.enter_Email();
-	}
-	
-	@Test(priority = 7)
-	public void enter_CurrentAddress() {
-		tb.enter_CurrentAddress();
-	}
-	
-	@Test(priority = 8)
-	public void enter_PermanentAddress() {
-		tb.enter_PermanentAddress();
-	}
-	
-	@Test(priority = 9)
+	@Test(priority = 3)
 	public void click_submit() {
 		tb.click_Submit_Btn();
 	}
 	
-	@Test(priority = 10)
-	public void verify_Submitted_Full_Name() {
+	@Test(priority = 4)
+	public void verify_submitted_data() {
 		tb.verify_Submitted_Name();
-	}
-	
-	@Test(priority = 11)
-	public void verify_Submitted_Email() {
 		tb.verify_Submitted_Email();
-	}
-	
-	@Test(priority = 12)
-	public void verify_Submitted_Current_Address() {
 		tb.verify_Submitted_CurrentAddress();
-	}
-	
-	@Test(priority = 13)
-	public void verify_Submitted_Permanent_Address() {
 		tb.verify_Submitted_PermanentAddress();
 	}
 }

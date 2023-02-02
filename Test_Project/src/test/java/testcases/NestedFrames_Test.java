@@ -16,27 +16,15 @@ public class NestedFrames_Test extends Base{
 	}
 	
 	@Test(priority = 1)
-	public void switch_to_outer_frame() {
+	public void outer_frame() {
 		nf.switch_to_outer_frame();
-	}
-	
-	@Test(priority = 2)
-	public void verify_outer_frame_text() {
 		nf.verify_outer_frame_text();
 	}
 	
-	@Test(priority = 3)
-	public void switch_to_inner_frame() {
+	@Test(priority = 2)
+	public void inner_frame() {
 		nf.switch_to_inner_frame();
-	}
-	
-	@Test(priority = 4)
-	public void verify_inner_frame_text() {
 		nf.verify_inner_frame_text();
-	}
-	
-	@Test(priority = 5)
-	public void switch_to_original_frame() {
 		nf.switch_to_original_frame();
 	}
 }

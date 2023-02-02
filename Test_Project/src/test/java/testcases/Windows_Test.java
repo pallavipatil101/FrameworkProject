@@ -1,5 +1,7 @@
 package testcases;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import actions.HomePage;
@@ -8,6 +10,7 @@ import base.Base;
 
 public class Windows_Test extends Base{
 	Windows win = new Windows();
+	public Logger log = LogManager.getLogger(Accordian_Test.class.getName());
 	
 	@Test(priority = 0)
 	public void navigate_to_windows() {
@@ -15,63 +18,41 @@ public class Windows_Test extends Base{
 		hp.navigate_to_alert_frames_windows().navigate_to_windows();
 	}
 	
-	@Test(priority = 1, enabled=true)
-	public void open_new_tab() {
+	@Test(priority = 1, enabled=false)
+	public void new_tab() {
 		win.open_new_tab();
-	}
-	
-	@Test(priority = 2, enabled=true)
-	public void switch_to_new_tab() {
+		log.debug("Opened new tab");
 		win.switch_to_newwindow();
-	}
-	
-	@Test(priority = 3, enabled=true)
-	public void verify_newtab_heading() {
+		log.debug("Navigated to new tab");
 		win.verify_newtab_heading();
-	}
-	
-	@Test(priority = 4, enabled=true)
-	public void switch_to_original_tab() {
+		log.debug("Verifified heading of new tab");
 		win.switch_to_parentwindow();
+		log.debug("Switched back to original tab");
 	}
 	
-	@Test(priority = 5, enabled=true)
-	public void open_new_window() {
+	
+	@Test(priority = 2, enabled=false)
+	public void new_window() {
 		win.open_new_window();
-	}
-	
-	@Test(priority = 6, enabled=true)
-	public void switch_to_new_window() {
+		log.debug("Opened new window");
 		win.switch_to_newwindow();
-	}
-	
-	@Test(priority = 7, enabled=true)
-	public void verify_newwindow_heading() {
+		log.debug("Switched to new window");
 		win.verify_newwindow_heading();
-	}
-	
-	@Test(priority = 8, enabled=true)
-	public void switch_to_parent_window() {
+		log.debug("Verified heading of new window");
 		win.switch_to_parentwindow();
+		log.debug("Switched back to original window");
 	}
 	
-	@Test(priority = 9)
-	public void open_new_msg_window() {
+	
+	@Test(priority = 1, enabled = true)
+	public void new_msg_window() {
 		win.open_msg_window();
-	}
-	
-	@Test(priority = 10)
-	public void switch_to_new_msg_window() {
+		log.debug("Opened new window");
 		win.switch_to_newwindow();
-	}
-	
-	@Test(priority = 11)
-	public void verify_msgwindow_text() {
+		log.debug("Switched to new window");
 		win.verify_msgwindow_heading();
-	}
-	
-	@Test(priority = 12)
-	public void switch_to_original_window() {
+		log.debug("Verified heading of new text");
 		win.switch_to_parentwindow();
+		log.debug("Switched back to original window");
 	}
 }

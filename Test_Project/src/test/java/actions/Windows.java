@@ -1,5 +1,7 @@
 package actions;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import base.Base;
 import locators.Windows_locators;
 
@@ -20,14 +22,15 @@ public class Windows extends Base{
 	
 	public void verify_newwindow_heading() {
 		verify_text("This is a sample page", wl.newWindowHeading());
+		driver.close();
 	}
 	
 	public void open_msg_window() {
 		wl.messageWindow().click();
 	}
-	
-	
+		
 	public void verify_msgwindow_heading() {
+		waiting().until(ExpectedConditions.visibilityOf(wl.msgWindowHeading()));
 		verify_text("Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.", wl.msgWindowHeading());
 	}
 	

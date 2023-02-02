@@ -23,15 +23,7 @@ public class Selectable_Test extends Base{
 	@Test(priority = 2)
 	public void switch_to_grid() {
 		se.switch_to_grid();
-	}
-	
-	@Test(priority = 3)
-	public void verify_grid_options() {
 		se.verify_grid_options();
-	}
-	
-	@Test(priority = 4)
-	public void select_all_grid_options() {
 		se.select_all_grid_options();
 	}
 }

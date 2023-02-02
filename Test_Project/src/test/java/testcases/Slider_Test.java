@@ -17,21 +17,13 @@ public class Slider_Test extends Base{
 	}
 	
 	@Test(priority = 1)
-	public void get_slider_location() {
-		sl.slider_location_before_drag();
-	}
-	
-	@Test(priority = 2)
 	public void drag_drop_slider() {
+		sl.slider_location_before_drag();
 		sl.dragSlider();
-	}
-	
-	@Test(priority = 3)
-	public void slider_location_after_drag() {
 		sl.slider_location_after_drag();
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 2)
 	public void verify_dragdrop_successful() {
 		sl.verify_dragdrop_successful();
 	}

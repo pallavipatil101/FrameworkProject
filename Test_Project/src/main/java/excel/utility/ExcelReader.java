@@ -137,17 +137,40 @@ public class ExcelReader {
 		}
 		
 	}
+
 	
-	public String getNumericCellData(String sheetName, int rowNum, int colNum) {
-		if(rowNum <=0 || colNum <= 0)
-			return "";
-		
-		sheet = workbook.getSheet(sheetName);
-		cell = sheet.getRow(rowNum).getCell(colNum);
-		DataFormatter formatter = new DataFormatter();
-        return formatter.formatCellValue(cell);
+	// returns the data from a cell
+	public String getCellData(String sheetName,int rowNum,int colNum){
+		try{
+			if(rowNum <=0)
+				return "";
+				
+			int index = workbook.getSheetIndex(sheetName);
+			if(index==-1)
+				return "";
+						
+			sheet = workbook.getSheetAt(index);
+			row = sheet.getRow(rowNum);
+			if(row==null)
+				return "";
+				
+			cell = row.getCell(colNum);
+			if(cell==null)
+				return "";
+				
+			DataFormatter formatter = new DataFormatter();
+	        return formatter.formatCellValue(cell);
+				  
+		  }
+		catch(Exception e){
+			e.printStackTrace();
+			return "row "+rowNum+" or column "+colNum +" does not exist  in xls";
+		}
 	}
 	
+	
+	
+	//Returns data as string
 	public String getData(String sheetName, String colName, int rowNum)
 	{
 		try{

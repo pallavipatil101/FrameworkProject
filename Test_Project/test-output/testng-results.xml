@@ -1,33 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="1" total="11" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-01-24T11:50:24 IST" name="Default suite" finished-at="2023-01-24T11:50:42 IST" duration-ms="17904">
+  <suite started-at="2023-02-02T12:08:45 IST" name="Default suite" finished-at="2023-02-02T12:09:00 IST" duration-ms="15031">
     <groups>
     </groups>
-    <test started-at="2023-01-24T11:50:24 IST" name="Default test" finished-at="2023-01-24T11:50:42 IST" duration-ms="17904">
+    <test started-at="2023-02-02T12:08:45 IST" name="Default test" finished-at="2023-02-02T12:09:00 IST" duration-ms="15031">
       <class name="testcases.Webtable_Test">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.Webtable_Test@6079cf5]" started-at="2023-01-24T11:50:24 IST" name="setup" finished-at="2023-01-24T11:50:40 IST" duration-ms="16221" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:45 IST" name="setup" finished-at="2023-02-02T12:08:56 IST" duration-ms="11531" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="printRow1()[pri:0, instance:testcases.Webtable_Test@6079cf5]" started-at="2023-01-24T11:50:40 IST" name="printRow1" finished-at="2023-01-24T11:50:41 IST" duration-ms="391" status="PASS">
+        <test-method signature="navigate_to_webtable()[pri:0, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:56 IST" name="navigate_to_webtable" finished-at="2023-02-02T12:08:57 IST" duration-ms="591" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate_to_webtable -->
+        <test-method signature="printRow1()[pri:1, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:57 IST" name="printRow1" finished-at="2023-02-02T12:08:57 IST" duration-ms="617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- printRow1 -->
-        <test-method signature="editRow1()[pri:1, instance:testcases.Webtable_Test@6079cf5]" started-at="2023-01-24T11:50:41 IST" name="editRow1" finished-at="2023-01-24T11:50:42 IST" duration-ms="1000" status="PASS">
+        <test-method signature="edit_Row1(java.lang.String,java.lang.String)[pri:2, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:57 IST" name="edit_Row1" data-provider="webtableDP" finished-at="2023-02-02T12:08:58 IST" duration-ms="385" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[First Name]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pallavi]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editRow1 -->
-        <test-method signature="submitData()[pri:2, instance:testcases.Webtable_Test@6079cf5]" started-at="2023-01-24T11:50:42 IST" name="submitData" finished-at="2023-01-24T11:50:42 IST" duration-ms="67" status="PASS">
+        </test-method> <!-- edit_Row1 -->
+        <test-method signature="edit_Row1(java.lang.String,java.lang.String)[pri:2, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:58 IST" name="edit_Row1" data-provider="webtableDP" finished-at="2023-02-02T12:08:58 IST" duration-ms="339" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Last Name]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Patil]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- submitData -->
-        <test-method signature="verifyEdits()[pri:3, instance:testcases.Webtable_Test@6079cf5]" started-at="2023-01-24T11:50:42 IST" name="verifyEdits" finished-at="2023-01-24T11:50:42 IST" duration-ms="91" status="PASS">
+        </test-method> <!-- edit_Row1 -->
+        <test-method signature="edit_Row1(java.lang.String,java.lang.String)[pri:2, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:58 IST" name="edit_Row1" data-provider="webtableDP" finished-at="2023-02-02T12:08:58 IST" duration-ms="262" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pallavi.patil@joshsoftware.com]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEdits -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.Webtable_Test@6079cf5]" started-at="2023-01-24T11:50:42 IST" name="teardown" finished-at="2023-01-24T11:50:42 IST" duration-ms="104" status="PASS">
+        </test-method> <!-- edit_Row1 -->
+        <test-method signature="edit_Row1(java.lang.String,java.lang.String)[pri:2, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:58 IST" name="edit_Row1" data-provider="webtableDP" finished-at="2023-02-02T12:08:59 IST" duration-ms="41" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Age]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[26]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_Row1 -->
+        <test-method signature="edit_Row1(java.lang.String,java.lang.String)[pri:2, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:59 IST" name="edit_Row1" data-provider="webtableDP" finished-at="2023-02-02T12:08:59 IST" duration-ms="283" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Salary]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11111]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_Row1 -->
+        <test-method signature="edit_Row1(java.lang.String,java.lang.String)[pri:2, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:59 IST" name="edit_Row1" data-provider="webtableDP" finished-at="2023-02-02T12:08:59 IST" duration-ms="332" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Department]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[QA]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_Row1 -->
+        <test-method signature="submit_Data()[pri:3, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:59 IST" name="submit_Data" finished-at="2023-02-02T12:08:59 IST" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submit_Data -->
+        <test-method signature="verify_Edits_to_Row1()[pri:4, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:08:59 IST" name="verify_Edits_to_Row1" finished-at="2023-02-02T12:09:00 IST" duration-ms="227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Edits_to_Row1 -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.Webtable_Test@d8948cd]" started-at="2023-02-02T12:09:00 IST" name="teardown" finished-at="2023-02-02T12:09:00 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

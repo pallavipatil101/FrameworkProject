@@ -20,8 +20,11 @@ public class WebTable extends Base {
 		System.out.println();
 	}
 	
-	public void edit_Row1() {
+	public void click_on_editrow1() {
 		wpl.editRow1().click();
+	}
+	
+	public void edit_Row1() {
 		waiting().until(ExpectedConditions.elementToBeClickable(wpl.firstName()));
 		wpl.firstName().clear();
 		send(wpl.firstName(), e.getCellData("Table", "Values", 1) );
@@ -34,7 +37,7 @@ public class WebTable extends Base {
 		wpl.salary().clear();
 		send(wpl.salary(), e.getData("Table", "Values", 5));
 		wpl.department().clear();
-		send(wpl.department(), e.getCellData("Table", "Values", 6));		
+		send(wpl.department(), e.getCellData("Table", "Values", 6));
 	}
 	
 	public void submit_form() {
@@ -47,6 +50,48 @@ public class WebTable extends Base {
 			System.out.print("--"+row.getText());
 		}
 		System.out.println();
+	}
+	
+	public void edit_Row(String label, String value) {
+		waiting().until(ExpectedConditions.elementToBeClickable(wpl.firstName()));
+		
+		if(label.contains("First"))
+		{
+			wpl.firstName().clear();
+			send(wpl.firstName(), value);			
+		}
+		
+		if(label.contains("Last"))
+		{
+			wpl.lastName().clear();
+			send(wpl.lastName(), value);	
+		}
+		
+		if(label.contains("mail"))
+		{
+			wpl.email().clear();
+			send(wpl.email(), value);			
+		}
+		
+		if(label.contains("age"))
+		{
+			wpl.age().clear();
+			send(wpl.age(), value);	
+		}
+		
+		if(label.contains("Salary"))
+		{
+			wpl.salary().clear();
+			send(wpl.salary(), value);	
+		}
+		
+		if(label.contains("Depart"))
+		{
+			wpl.department().clear();
+			send(wpl.department(), value);	
+		}
+		
+		
 	}
 	
 }

@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import actions.HomePage;
 import actions.PracticeForm;
 import base.Base;
+import excel.utility.ExcelDataProvider;
 
 public class PracticeForm_Test extends Base{
 	PracticeForm pf = new PracticeForm();
@@ -17,99 +18,43 @@ public class PracticeForm_Test extends Base{
 	}
 	
 	@Test(priority = 1)
-	public void verify_name_label() {
+	public void verify_labels() {
 		pf.verify_name_label();
-	}
-	
-	@Test(priority = 2)
-	public void verify_email_label() {
 		pf.verify_email_label();
-	}
-	
-	@Test(priority = 3)
-	public void verify_gender_label() {
 		pf.verify_gender_label();
-	}
-	
-	@Test(priority = 4)
-	public void verify_mobile_label() {
 		pf.verify_mobile_label();
-	}
-	
-	@Test(priority = 5)
-	public void verify_birthdate_label() {
 		pf.verify_birthdate_label();
-	}
-	
-	@Test(priority = 6)
-	public void verify_subjects_label() {
 		pf.verify_subjects_label();
-	}
-	
-	@Test(priority = 7)
-	public void verify_hobbies_label() {
 		pf.verify_hobbies_label();
-	}
-	
-	@Test(priority = 8)
-	public void verify_picture_label() {
 		pf.verify_photo_label();
-	}
-	
-	@Test(priority = 9)
-	public void verify_address_label() {
 		pf.verify_address_label();
 	}
 	
-	@Test(priority = 10)
-	public void enter_first_name() {
+	@Test(priority = 2)
+	public void enter_form_data() {
 		pf.enter_first_name();
-	}
-	
-	@Test(priority = 11)
-	public void enter_last_name() {
 		pf.enter_last_name();
-	}
-	
-	@Test(priority = 12)
-	public void enter_email() {
 		pf.enter_email();
-	}
-	
-	
-	@Test(priority = 13)
-	public void select_gender() {
 		pf.select_gender();
-	}
-	
-	@Test(priority = 14)
-	public void enter_mobile() {
 		pf.enter_mobile();
-	}
-	
-	
-	@Test(priority = 15)
-	public void select_birthdate() {
 		pf.select_birthdate();
-	}
-	
-	@Test(priority = 16)
-	public void select_hobbies() {
 		pf.select_hobbies();
-	}
-	
-	@Test(priority = 17)
-	public void upload_picture() {
 		pf.upload_photo();
-	}
-	
-	@Test(priority = 18)
-	public void enter_address() {
 		pf.enter_address();
-	}
-	
-	@Test(priority = 19)
-	public void select_subjects() {
 		pf.select_subjects();
 	}
+	
+	/*@Test(priority = 2, dataProvider="practiceformDP" , dataProviderClass = ExcelDataProvider.class)
+	public void enter_form_data(String label, String value) {
+		pf.enter_first_name(label, value);
+		pf.enter_last_name(label, value);
+		pf.enter_email(label, value);
+		pf.enter_mobile(label, value);
+		pf.enter_address(label, value);
+		pf.select_gender();
+		pf.select_birthdate();
+		pf.select_hobbies();
+		pf.upload_photo();
+		pf.select_subjects();
+	}*/
 }

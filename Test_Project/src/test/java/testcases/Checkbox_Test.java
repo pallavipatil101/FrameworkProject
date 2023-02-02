@@ -18,12 +18,8 @@ public class Checkbox_Test extends Base{
 	}
 	
 	@Test(priority = 1)
-	public void click_checkbox() {
+	public void checkbox() {
 		cb.click_Checkbox();
-	}
-	
-	@Test(priority = 2)
-	public void verifySelectedCheckBox() {
 		cb.verify_Selected_CheckBox();
 	}
 }

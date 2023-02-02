@@ -16,22 +16,14 @@ public class Sortable_Test extends Base{
 	}
 	
 	@Test(priority = 1)
-	public void switch_to_grid() {
+	public void grid() {
 		so.switch_to_grid();
-	}
-	
-	@Test(priority = 2)
-	public void verify_grid_elements() {
 		so.verify_grid_elements();
 	}
 	
-	@Test(priority = 3)
-	public void switch_to_list() {
+	@Test(priority = 2)
+	public void list() {
 		so.switch_to_list();
-	}
-	
-	@Test(priority = 4)
-	public void verify_list_elements() {
 		so.verify_list_elements();
 	}
 }

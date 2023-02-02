@@ -27,21 +27,17 @@ public class DynamicProperties_Test extends Base{
 	}
 	
 	@Test(priority = 3)
-	public void waits() {
-		dp.wait_Five_Seconds();
-	}
-	
-	@Test(priority = 4)
 	public void verifyEnabledBtn() {
+		dp.wait_Five_Seconds();
 		dp.verify_Enabled_Btn();
 	}
 	
-	@Test(priority = 5)
+	@Test(priority = 4)
 	public void verifyBtnColorChange() {
 		dp.verify_Button_Color_Change();
 	}
 	
-	@Test(priority = 6)
+	@Test(priority = 5)
 	public void verifyVisibilityOfInvisibleBtn() {
 		dp.verify_Visible_Btn();
 	}

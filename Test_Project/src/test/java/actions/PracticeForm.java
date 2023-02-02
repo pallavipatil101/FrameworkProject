@@ -50,6 +50,41 @@ public class PracticeForm extends Base{
 		verify_text("Current Address", pfl.address_label() );
 	}
 	
+	/*public void enter_first_name(String label, String value) {
+		if(label.contains("First"))
+		{
+			send(pfl.firstName(), value);
+		}
+	}
+	
+	public void enter_last_name(String label, String value) {
+		if(label.contains("Last"))
+		{
+			send(pfl.lastName(), value);
+		}
+	}
+	
+	public void enter_email(String label, String value) {
+		if(label.contains("Email"))
+		{
+			send(pfl.email(), value);
+		}
+	}
+	
+	public void enter_mobile(String label, String value) {
+		if(label.contains("Mobile"))
+		{
+			send(pfl.mobile(), value);
+		}
+	}
+	
+	public void enter_address(String label, String value) {
+		if(label.contains("Address"))
+		{
+			send(pfl.address(), value);
+		}
+	}*/
+	
 	public void enter_first_name() {
 		send(pfl.firstName(), e.getCellData("Form", "Values", 1));
 	}
@@ -61,6 +96,16 @@ public class PracticeForm extends Base{
 	public void enter_email() {
 		send(pfl.email(), e.getCellData("Form", "Values", 3));
 	}
+	
+	public void enter_mobile() {
+		send(pfl.mobile(), e.getData("Form", "Values", 4));
+	}
+	
+	public void enter_address() {
+		scroll_to_element(pfl.address());
+		send(pfl.address(), e.getCellData("Form", "Values", 6));
+	}
+	
 	
 	public void select_gender() {
 		for(WebElement g : pfl.genderRadio())
@@ -74,10 +119,6 @@ public class PracticeForm extends Base{
 				}
 			}
 		}
-	}
-	
-	public void enter_mobile() {
-		send(pfl.mobile(), e.getData("Form", "Values", 4));
 	}
 	
 	public void select_birthdate() {
@@ -102,11 +143,6 @@ public class PracticeForm extends Base{
 				}
 			}
 		}
-	}
-	
-	
-	public void enter_address() {
-		send(pfl.address(), e.getCellData("Form", "Values", 6));
 	}
 	
 	public void upload_photo() {

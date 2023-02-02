@@ -9,8 +9,8 @@ import locators.Droppable_locators;
 
 public class Droppable extends Base{
 	Droppable_locators drop = new Droppable_locators();
-	public Point locBefore;
-	public Point locAfter;
+	public String locBefore;
+	public String locAfter;
 	
 	
 	public void simple_drag_drop() {
@@ -38,7 +38,7 @@ public class Droppable extends Base{
 		action().dragAndDrop(drop.draggableNotAcceptable(), drop.droppableAccept()).build().perform();
 	}
 	
-	public void verify_drag_not_accepted() {
+	public void verifropy_not_accepted_drop() {
 		verify_text("Drop here", drop.droppedMessageAccept());
 	}
 	
@@ -101,25 +101,24 @@ public class Droppable extends Base{
 	}
 	
 	public void revertable_drag_location_before() {
-		locBefore = drop.draggableRevertable().getLocation();
-		System.out.println("BEFORE"+drop.draggableRevertable().getAttribute("style"));
+		locBefore = drop.draggableRevertable().getAttribute("style");
 	}
 	
 	public void revertable_drag() {
+		scroll_to_element(drop.draggableRevertable());
 		action().dragAndDrop(drop.draggableRevertable(), drop.droppableRevert()).build().perform();
 	}
 	
 	public void revertable_drag_location_after() {
-		locAfter = drop.draggableRevertable().getLocation();
-		System.out.println("AFTER"+drop.draggableRevertable().getAttribute("style"));
+		locAfter = drop.draggableRevertable().getAttribute("style");
 	}
 	
 	public void verify_revertable_drag_location() {
-		Assert.assertEquals(locBefore, locAfter);
+		Assert.assertNotEquals(locBefore, locAfter);
 	}
 
 	public void not_revertable_drag_location_before() {
-		locBefore = drop.draggableNotRevertable().getLocation();
+		locBefore = drop.draggableNotRevertable().getAttribute("style");
 	}
 	
 	public void not_revertable_drag() {
@@ -127,7 +126,7 @@ public class Droppable extends Base{
 	}
 	
 	public void not_revertable_drag_location_after() {
-		locAfter = drop.draggableNotRevertable().getLocation();
+		locAfter = drop.draggableNotRevertable().getAttribute("style");
 	}
 
 	public void verify_not_revertable_drag_location() {

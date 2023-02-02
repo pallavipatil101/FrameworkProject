@@ -19,10 +19,6 @@ public class AutoComplete_locators extends Base {
 		return driver.findElement(By.name("aswift_0"));
 	}
 	
-	public WebElement multiPurple() {
-		return driver.findElement(By.id("react-select-5-option-0"));
-	}
-	
 	public WebElement multiBlue() {
 		return driver.findElement(By.id("react-select-5-option-0"));
 	}

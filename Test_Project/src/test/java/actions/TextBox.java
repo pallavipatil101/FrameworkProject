@@ -25,20 +25,32 @@ public class TextBox extends Base{
 		verify_text("Permanent Address", tpl.permanentAddress_label());
 	}
 	
-	public void enter_FullName() {
-		send(tpl.userName(), e.getCellData("Textbox", "Values", 1));
+	public void enter_FirstName(String label, String value) {
+		if(label.contains("Name"))
+		{
+			send(tpl.userName(), value);
+		}
 	}
 	
-	public void enter_Email() {
-		send(tpl.userEmail(), e.getCellData("Textbox", "Values", 2));
+	public void enter_Email(String label, String value) {
+		if(label.contains("Email"))
+		{
+			send(tpl.userEmail(), value);
+		}
 	}
 	
-	public void enter_CurrentAddress() {
-		send(tpl.currentAddress(), e.getCellData("Textbox", "Values", 3));
+	public void enter_CurrentAddress(String label, String value) {
+		if(label.contains("Current"))
+		{
+			send(tpl.currentAddress(), value);
+		}
 	}
 	
-	public void enter_PermanentAddress() {
-		send(tpl.permanentAddress(), e.getCellData("Textbox", "Values", 4));
+	public void enter_PermanentAddress(String label, String value) {
+		if(label.contains("Permanent"))
+		{
+			send(tpl.permanentAddress(), value);
+		}
 	}
 	
 	
@@ -46,6 +58,7 @@ public class TextBox extends Base{
 		scroll_to_element(tpl.submitBtn());
 		tpl.submitBtn().click();
 	}
+	
 	
 	public void verify_Submitted_Name() {
 		scroll_to_element(tpl.submittedCurrentAddress());

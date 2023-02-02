@@ -22,11 +22,6 @@ public class AutoComplete extends Base{
 		action().keyDown(Keys.ENTER).keyUp(Keys.ENTER).build().perform();
 	}
 	
-	public void select_third_color() {
-		action().moveToElement(ac.multipleColors()).click().sendKeys("P").build().perform();
-		action().keyDown(Keys.ENTER).keyUp(Keys.ENTER).build().perform();
-	}
-	
 	public void go_to_single_color_textbox() {
 		action().moveToElement(ac.singleColor()).click().sendKeys("R").build().perform();
 	}
