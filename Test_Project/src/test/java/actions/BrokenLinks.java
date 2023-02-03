@@ -2,20 +2,19 @@ package actions;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.HttpClientBuilder;
+
 import base.Base;
 import locators.BrokenLinks_locators;
+import testcases.Accordian_Test;
 
 public class BrokenLinks extends Base{
 	
+	public Logger log = LogManager.getLogger(Accordian_Test.class.getName());
 	BrokenLinks_locators bll = new BrokenLinks_locators();
 	String url = "";
 	HttpURLConnection httpcon = null;
@@ -29,6 +28,7 @@ public class BrokenLinks extends Base{
 			if(url == null || url.isEmpty())
 			{
 				System.out.println("URL is either not configured for anchor tag or it is empty");
+				log.info("URL is either not configured for anchor tag or it is empty");
 				continue;
 			}
 			
@@ -42,10 +42,12 @@ public class BrokenLinks extends Base{
 				if(respCode >= 400)
 				{
 					System.out.println(url+"--"+respCode+"--"+respMsg+"--is a broken link.");
+					log.info(url+"--"+respCode+"--"+respMsg+"--is a broken link.");
 				}
 				else
 				{
 					System.out.println(url+"--"+respCode+"--"+respMsg+"--is a NOT a broken link.");
+					log.info(url+"--"+respCode+"--"+respMsg+"--is a NOT a broken link.");
 				}
 			} 
 			catch (IOException e) 
@@ -56,31 +58,15 @@ public class BrokenLinks extends Base{
 	}
 	
 	public void findBrokenImages() {
-		for(WebElement img : bll.images())
-		{	
-			System.out.println("SIZE>>>>>>"+img.getSize());
-			String src = img.getAttribute("src");
-			try 
-			{
-				httpcon = (HttpURLConnection)(new URL(src).openConnection());
-				httpcon.connect();
-				respMsg = httpcon.getResponseMessage();
-				respCode = httpcon.getResponseCode();
-
-				if(respCode != 200)
-				{
-					System.out.println(src+"--"+respCode+"--"+respMsg+"--is a broken Image.");
-				}
-				else
-				{
-					System.out.println(src+"--"+respCode+"--"+respMsg+"--is a NOT a broken Image.");
-				}
-			} 
-			catch (IOException e) 
-			{				
-				e.printStackTrace();
-			} 
-			
+		for(WebElement img : bll.images()) {
+			if (img.getAttribute("naturalWidth").equals("0"))
+		    {
+		        System.out.println(img.getAttribute("src") + " is a broken image.");
+		    }
+			else {
+				System.out.println(img.getAttribute("src") + " is not a broken image.");
+			}
 		}
+		
 	}
 }

@@ -34,7 +34,6 @@ public class Droppable_Test extends Base{
 	public void prevent_propagation_tab_dragdrop() {
 		dr.switch_to_propagation_tab();
 		dr.greedy_inner_drop();
-		//not dropping
 		dr.verify_greedy_inner_text();
 		dr.verify_greedy_outer_text();
 		dr.not_greedy_inner_drop();
@@ -48,8 +47,7 @@ public class Droppable_Test extends Base{
 		dr.revertable_drag_location_before();
 		dr.revertable_drag();
 		dr.revertable_drag_location_after();
-		dr.verify_revertable_drag_location();
-		
+		dr.verify_revertable_drag_location();	
 		dr.not_revertable_drag_location_before();
 		dr.not_revertable_drag();
 		dr.not_revertable_drag_location_after();

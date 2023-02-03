@@ -27,7 +27,7 @@ public class DynamicProperties extends Base{
 	
 	public void verify_Button_Color_Change() {
 		String colorAfter = dpl.colorChangeBtn().getCssValue("color");
-		stringsNotEqual(colorBefore, colorAfter);
+		verify_texts_notEqual(colorBefore, colorAfter);
 	}
 	
 	public void verify_Visible_Btn() {

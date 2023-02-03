@@ -23,6 +23,7 @@ public class DatePicker_locators extends Base{
 	
 	public WebElement calender1Date() {
 		return driver.findElement(By.xpath("//*[@id='datePickerMonthYear']/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[2]"));
+		//return driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']/option"));
 	}
 	
 	public WebElement calender2() {

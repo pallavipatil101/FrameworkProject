@@ -10,19 +10,19 @@ public class TextBox extends Base{
 	ExcelReader e = new ExcelReader(System.getProperty("user.dir")+"/src/test/resources/Data_DemoQA.xlsx");
 	
 	public void verify_FullName_label() {
-		verify_text("Full Name", tpl.fullName_label());
+		verify_texts_equal("Full Name", tpl.fullName_label());
 	}
 	
 	public void verify_Email_label() {
-		verify_text("Email", tpl.email_label());
+		verify_texts_equal("Email", tpl.email_label());
 	}
 	
 	public void verify_Current_Address_Label() {
-		verify_text("Current Address", tpl.currentAddress_label());
+		verify_texts_equal("Current Address", tpl.currentAddress_label());
 	}
 	
 	public void verify_Permanent_Address_Label() {
-		verify_text("Permanent Address", tpl.permanentAddress_label());
+		verify_texts_equal("Permanent Address", tpl.permanentAddress_label());
 	}
 	
 	public void enter_FirstName(String label, String value) {
@@ -62,19 +62,19 @@ public class TextBox extends Base{
 	
 	public void verify_Submitted_Name() {
 		scroll_to_element(tpl.submittedCurrentAddress());
-		verify_text("Name:Pallavi Patil", tpl.submittedName());
+		verify_texts_equal("Name:Pallavi Patil", tpl.submittedName());
 	}
 	
 	public void verify_Submitted_Email() {
-		verify_text("Email:pallavi.patil@joshsoftware.com", tpl.submittedEmail());
+		verify_texts_equal("Email:pallavi.patil@joshsoftware.com", tpl.submittedEmail());
 	}
 	
 	public void verify_Submitted_CurrentAddress() {
-		verify_text("Current Address :Pune", tpl.submittedCurrentAddress());
+		verify_texts_equal("Current Address :Pune", tpl.submittedCurrentAddress());
 	}
 	
 	public void verify_Submitted_PermanentAddress() {
-		verify_text("Permananet Address :Miraj", tpl.submittedPermanentAddress());
+		verify_texts_equal("Permananet Address :Miraj", tpl.submittedPermanentAddress());
 	}
 	
 	
@@ -88,9 +88,9 @@ public class TextBox extends Base{
 	
 	public void verify_Submitted_Data() {
 		scroll_to_element(tpl.submittedCurrentAddress());
-		verify_text("Name:Pallavi Patil", tpl.submittedName());
-		verify_text("Email:pallavi.patil@joshsoftware.com", tpl.submittedEmail());
-		verify_text("Current Address :Pune", tpl.submittedCurrentAddress());
-		verify_text("Permananet Address :Miraj", tpl.submittedPermanentAddress());
+		verify_texts_equal("Name:Pallavi Patil", tpl.submittedName());
+		verify_texts_equal("Email:pallavi.patil@joshsoftware.com", tpl.submittedEmail());
+		verify_texts_equal("Current Address :Pune", tpl.submittedCurrentAddress());
+		verify_texts_equal("Permananet Address :Miraj", tpl.submittedPermanentAddress());
 	}
 }

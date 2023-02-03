@@ -18,7 +18,7 @@ public class Windows_Test extends Base{
 		hp.navigate_to_alert_frames_windows().navigate_to_windows();
 	}
 	
-	@Test(priority = 1, enabled=false)
+	@Test(priority = 1, enabled=true)
 	public void new_tab() {
 		win.open_new_tab();
 		log.debug("Opened new tab");
@@ -31,7 +31,7 @@ public class Windows_Test extends Base{
 	}
 	
 	
-	@Test(priority = 2, enabled=false)
+	@Test(priority = 2, enabled=true)
 	public void new_window() {
 		win.open_new_window();
 		log.debug("Opened new window");
@@ -44,7 +44,7 @@ public class Windows_Test extends Base{
 	}
 	
 	
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void new_msg_window() {
 		win.open_msg_window();
 		log.debug("Opened new window");

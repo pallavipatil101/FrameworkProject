@@ -1,5 +1,8 @@
 package testcases;
 
+import java.io.IOException;
+
+import org.apache.http.client.ClientProtocolException;
 import org.testng.annotations.Test;
 
 import actions.BrokenLinks;
@@ -21,7 +24,7 @@ public class BrokenLinks_Test extends Base{
 	}
 	
 	@Test(priority = 2)
-	public void findBrokenImages() {
+	public void findBrokenImages() throws ClientProtocolException, IOException {
 		bl.findBrokenImages();
 	}
 	

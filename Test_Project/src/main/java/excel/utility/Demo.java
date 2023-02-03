@@ -14,7 +14,7 @@ public class Demo{
 		System.out.println(e.getCellData("Table", 4, 1));
 	}
 	
-	/*@Test(dataProvider="excel-data" , dataProviderClass = ExcelDP.class)
+	@Test(dataProvider="excel-data" , dataProviderClass = ExcelDP.class)
 	public void signIn(String label, String value) {				
 		//System.out.println(label+"--"+value);
 		if(label.equalsIgnoreCase("Name")) {
@@ -25,7 +25,7 @@ public class Demo{
 		{
 			System.out.println(value);
 		}
-	}*/
+	}
 
 }
 

@@ -12,7 +12,7 @@ public class Modals extends Base {
 	
 	public void verify_small_modal_text() {
 		scroll_to_element(md.smallModaltext());
-		verify_text("This is a small modal. It has very less content", md.smallModaltext());
+		verify_texts_equal("This is a small modal. It has very less content", md.smallModaltext());
 	}
 	
 	public void close_small_modal() {

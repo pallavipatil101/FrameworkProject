@@ -31,9 +31,7 @@ public class Listeners extends Base implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 		//extentTest.fail(result.getThrowable());	// to print cause of error/exception in report. without it itll show as pass
 		extentTestThread.get().fail(result.getThrowable());
-		//WebDriver driver = null;
 		String testMethodName = result.getName();
-		
 		try {
 			String screenshotPath = takeScreenshot(testMethodName);
 			extentTestThread.get().addScreenCaptureFromPath(screenshotPath, testMethodName);
@@ -42,21 +40,6 @@ public class Listeners extends Base implements ITestListener{
 			e.printStackTrace();
 		}
 
-		
-		/*String testMethodName = result.getName();
-		
-		try {
-			driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		try {
-			takeScreenshot(testMethodName,driver);
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}*/
 	}
 
 	public void onTestSkipped(ITestResult result) {

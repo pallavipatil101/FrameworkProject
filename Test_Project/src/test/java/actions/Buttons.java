@@ -21,15 +21,15 @@ public class Buttons extends Base {
 	
 	public void verify_Double_Click() {
 		//scroll_to_element(bpl.dynamicClickMsg());
-		verify_text("You have done a double click", bpl.doubleClickMsg());
+		verify_texts_equal("You have done a double click", bpl.doubleClickMsg());
 	}
 	
 	public void verify_Right_Click() {
-		verify_text("You have done a right click", bpl.rightClickMsg());
+		verify_texts_equal("You have done a right click", bpl.rightClickMsg());
 	}
 
 	public void verify_Dynamic_Click() {
-		verify_text("You have done a dynamic click", bpl.dynamicClickMsg());
+		verify_texts_equal("You have done a dynamic click", bpl.dynamicClickMsg());
 	}
 	
 }

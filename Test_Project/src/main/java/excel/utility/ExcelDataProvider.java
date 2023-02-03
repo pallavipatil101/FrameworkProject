@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import base.Base;
 
-public class ExcelDataProvider{
+public class ExcelDataProvider extends Base{
 	
 	public static Object[][] testData(String path, String sheetName) {
 		

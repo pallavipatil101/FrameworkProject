@@ -10,13 +10,13 @@ public class Links extends Base {
 	
 	public void click_Links() {
 		
-		String parent = driver.getWindowHandle();
 		for(WebElement link : lpl.linksList())
 		{
 			link.click();
 		}
 		
-		driver.switchTo().window(parent);
+		handleWindows();
+		driver.switchTo().window(parentwindow);
 	}
 	
 	

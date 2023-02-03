@@ -25,7 +25,7 @@ public class RadioButton extends Base{
 	}
 	
 	public void verify_Radio_Result() {
-		verify_text("Yes",rpl.radioButtonResult());
+		verify_texts_equal("Yes",rpl.radioButtonResult());
 	}
 	
 	public void verify_Disabled_Radio() {

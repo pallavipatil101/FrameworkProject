@@ -48,4 +48,26 @@ public class Draggable extends Base{
 		scroll_to_element(drag.draggablePageContained());
 		action().dragAndDropBy(drag.draggablePageContained(), 20, 30).build().perform();
 	}
+	
+	public void switch_to_curser_style_tab() {
+		for(WebElement tab : drag.draggableTabsList())
+		{
+			if(tab.getText().equals("Cursor Style"))
+			{
+				tab.click();
+			}
+		}
+	}
+	
+	public void drag_center_curser() {
+		action().dragAndDropBy(drag.draggableCursorCenter(), 230, 140).build().perform();
+	}
+	
+	public void drag_topleft_curser() {
+		action().dragAndDropBy(drag.draggableCursorTopLeft(), 0, -140).build().perform();
+	}
+	
+	public void drag_bottom_curser() {
+		
+	}
 }

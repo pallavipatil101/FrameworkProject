@@ -1,9 +1,7 @@
 package actions;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
 import base.Base;
 import excel.utility.ExcelReader;
 import locators.PracticeForm_locators;
@@ -15,39 +13,39 @@ public class PracticeForm extends Base{
 	public Select select;
 	
 	public void verify_name_label() {
-		verify_text("Name", pfl.name_label() );
+		verify_texts_equal("Name", pfl.name_label() );
 	}
 	
 	public void verify_email_label() {
-		verify_text("Email", pfl.email_label() );
+		verify_texts_equal("Email", pfl.email_label() );
 	}
 	
 	public void verify_gender_label() {
-		verify_text("Gender", pfl.gender_label() );
+		verify_texts_equal("Gender", pfl.gender_label() );
 	}
 	
 	public void verify_mobile_label() {
-		verify_text("Mobile(10 Digits)", pfl.mobile_label() );
+		verify_texts_equal("Mobile(10 Digits)", pfl.mobile_label() );
 	}
 	
 	public void verify_birthdate_label() {
-		verify_text("Date of Birth", pfl.birthdate_label() );
+		verify_texts_equal("Date of Birth", pfl.birthdate_label() );
 	}
 	
 	public void verify_subjects_label() {
-		verify_text("Subjects", pfl.subject_label() );
+		verify_texts_equal("Subjects", pfl.subject_label() );
 	}
 	
 	public void verify_hobbies_label() {
-		verify_text("Hobbies", pfl.hobbies_label() );
+		verify_texts_equal("Hobbies", pfl.hobbies_label() );
 	}
 	
 	public void verify_photo_label() {
-		verify_text("Picture", pfl.photo_label() );
+		verify_texts_equal("Picture", pfl.photo_label() );
 	}
 	
 	public void verify_address_label() {
-		verify_text("Current Address", pfl.address_label() );
+		verify_texts_equal("Current Address", pfl.address_label() );
 	}
 	
 	/*public void enter_first_name(String label, String value) {
@@ -124,10 +122,9 @@ public class PracticeForm extends Base{
 	public void select_birthdate() {
 		scroll_to_element(pfl.address());
 		pfl.calender().click();
-		select = new Select(pfl.birthMonthDrop());
-		select.selectByVisibleText("March");;
-		select = new Select(pfl.birthYearDrop());
-		select.selectByVisibleText("1996");
+		select_Drop_Down(pfl.birthMonthDrop()).selectByVisibleText("March");
+		select_Drop_Down(pfl.birthYearDrop()).selectByVisibleText("1996");
+		
 		action().moveToElement(pfl.birthDate()).click().build().perform();
 	}
 	

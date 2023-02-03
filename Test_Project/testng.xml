@@ -16,6 +16,26 @@
       <class name="testcases.BrokenLinks_Test"/>
       <class name="testcases.UploadDownload_Test"/>
       <class name="testcases.DynamicProperties_Test"/>
+      <class name="testcases.PracticeForm_Test"/>
+      <class name="testcases.Alerts_Test"/>
+      <class name="testcases.Frames_Test"/>
+      <class name="testcases.NestedFrames_Test"/>
+      <class name="testcases.Modals_Test"/>
+      <class name="testcases.Accordian_Test"/>
+      <class name="testcases.AutoComplete_Test"/>
+      <class name="testcases.Datepicker_Test"/>
+      <class name="testcases.Slider_Test"/>
+      <class name="testcases.ProgressBar_Test"/>
+      <class name="testcases.Tabs_Test"/>
+      <class name="testcases.ToolTips_Test"/>
+      <class name="testcases.Menu_Test"/>
+      <class name="testcases.SelectMenu_Test"/>
+      <class name="testcases.Sortable_Test"/>
+      <class name="testcases.Selectable_Test"/>
+      <class name="testcases.Resizable_Test"/>
+      <class name="testcases.Droppable_Test"/>
+      <class name="testcases.Draggable_Test"/>
+      <class name="testcases.Windows_Test"/>
     </classes>
   </test> 
 </suite> 

@@ -1,7 +1,5 @@
 package actions;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import base.Base;
 import locators.AutoComplete_locators;
 

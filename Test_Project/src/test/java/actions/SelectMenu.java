@@ -1,7 +1,6 @@
 package actions;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import base.Base;
 import locators.SelectMenu_locators;
 
@@ -9,14 +8,12 @@ public class SelectMenu extends Base{
 	SelectMenu_locators sm = new SelectMenu_locators();
 	
 	public void select_dropdown() {
-		Select select = new Select(sm.selectDropDown());
-		select.selectByVisibleText("Aqua");
+		select_Drop_Down(sm.selectDropDown()).selectByVisibleText("Aqua");
 	}
 	
 	public void standard_multi_select() {
-		Select select = new Select(sm.standardMultiSelectDropDown());
-		select.selectByVisibleText("Volvo");
-		select.selectByVisibleText("Audi");
+		select_Drop_Down(sm.standardMultiSelectDropDown()).selectByVisibleText("Volvo");
+		select_Drop_Down(sm.standardMultiSelectDropDown()).selectByVisibleText("Audi");
 	}
 	
 	public void multi_select() {

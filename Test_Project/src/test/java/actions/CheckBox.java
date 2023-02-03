@@ -14,6 +14,6 @@ public class CheckBox extends Base{
 	}
 	
 	public void verify_Selected_CheckBox() {
-		verify_text("You have selected :", cpl.chechbox_Result());
+		verify_texts_equal("You have selected :", cpl.chechbox_Result());
 	}
 }

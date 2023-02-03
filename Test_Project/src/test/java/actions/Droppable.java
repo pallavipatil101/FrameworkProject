@@ -1,6 +1,5 @@
 package actions;
 
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -14,12 +13,12 @@ public class Droppable extends Base{
 	
 	
 	public void simple_drag_drop() {
-		verify_text("Drop here", drop.droppedMessageSimple());
+		verify_texts_equal("Drop here", drop.droppedMessageSimple());
 		action().dragAndDrop(drop.draggableSimple(), drop.droppableSimple()).build().perform();
 	}
 	
 	public void verify_simple_drop_successful() {
-		verify_text("Dropped!", drop.droppedMessageSimple());
+		verify_texts_equal("Dropped!", drop.droppedMessageSimple());
 	}
 	
 	public void switch_to_accept_tab() {
@@ -34,21 +33,21 @@ public class Droppable extends Base{
 	
 	public void not_acceptable_drop() {
 		//scroll_to_element(drop.droppableAccept());
-		verify_text("Drop here", drop.droppedMessageAccept());
+		verify_texts_equal("Drop here", drop.droppedMessageAccept());
 		action().dragAndDrop(drop.draggableNotAcceptable(), drop.droppableAccept()).build().perform();
 	}
 	
 	public void verifropy_not_accepted_drop() {
-		verify_text("Drop here", drop.droppedMessageAccept());
+		verify_texts_equal("Drop here", drop.droppedMessageAccept());
 	}
 	
 	public void acceptable_drop() {
-		verify_text("Drop here", drop.droppedMessageAccept());
+		verify_texts_equal("Drop here", drop.droppedMessageAccept());
 		action().dragAndDrop(drop.draggableAcceptable(), drop.droppableAccept()).build().perform();
 	}
 	
 	public void verify_drag_accepted() {
-		verify_text("Dropped!", drop.droppedMessageAccept());
+		verify_texts_equal("Dropped!", drop.droppedMessageAccept());
 	}
 	
 	public void switch_to_propagation_tab() {
@@ -63,31 +62,31 @@ public class Droppable extends Base{
 	
 	public void greedy_inner_drop() {
 		scroll_to_element(drop.droppableInnerGreedy());
-		verify_text("Inner droppable (greedy)", drop.innerGreedyMessage());
+		verify_texts_equal("Inner droppable (greedy)", drop.innerGreedyMessage());
 		action().dragAndDrop(drop.draggablePreventPropagation(), drop.droppableInnerGreedy()).build().perform();
 	}
 	
 	public void verify_greedy_inner_text() {
 		scroll_to_element(drop.innerGreedyMessage());
-		verify_text("Dropped!", drop.innerGreedyMessage());
+		verify_texts_equal("Dropped!", drop.innerGreedyMessage());
 	}
 	
 	public void verify_greedy_outer_text() {
-		verify_text("Outer droppable", drop.outerGreedyMessage());
+		verify_texts_equal("Outer droppable", drop.outerGreedyMessage());
 	}
 	
 	public void not_greedy_inner_drop() {
 		scroll_to_element(drop.droppableOuterNotGreedy());
-		verify_text("Inner droppable (not greedy)", drop.innerNotGreedyMessage());
+		verify_texts_equal("Inner droppable (not greedy)", drop.innerNotGreedyMessage());
 		action().dragAndDrop(drop.draggablePreventPropagation(), drop.droppableInnerNotGreedy()).build().perform();
 	}
 	
 	public void verify_not_greedy_inner_text() {
-		verify_text("Dropped!", drop.innerNotGreedyMessage());
+		verify_texts_equal("Dropped!", drop.innerNotGreedyMessage());
 	}
 	
 	public void verify_not_greedy_outer_text() {
-		verify_text("Dropped!", drop.outerNotGreedyMessage());
+		verify_texts_equal("Dropped!", drop.outerNotGreedyMessage());
 	}
 	
 	public void switch_to_revert_tab() {

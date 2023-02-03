@@ -3,29 +3,6 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="testcases.Frames_Test">
-        <methods>
-          <include name="teardown"/>
-          <include name="frame2"/>
-          <include name="setup"/>
-          <include name="frame1"/>
-        </methods>
-      </class> <!-- testcases.Frames_Test -->
-      <class name="testcases.Datepicker_Test">
-        <methods>
-          <include name="calender1"/>
-          <include name="teardown"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- testcases.Datepicker_Test -->
-      <class name="testcases.Webtable_Test">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="edit_Row1" invocation-numbers="0 1 2 3 4 5"/>
-          <include name="submit_Data"/>
-        </methods>
-      </class> <!-- testcases.Webtable_Test -->
       <class name="testcases.Windows_Test">
         <methods>
           <include name="teardown"/>
@@ -33,29 +10,16 @@
           <include name="new_msg_window"/>
         </methods>
       </class> <!-- testcases.Windows_Test -->
-      <class name="testcases.Slider_Test">
+      <class name="testcases.Droppable_Test">
         <methods>
+          <include name="revert_draggable_tab_dragdrop"/>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="drag_drop_slider"/>
-          <include name="verify_dragdrop_successful"/>
-          <include name="navigate_to_slider"/>
+          <include name="simple_drag_drop"/>
+          <include name="prevent_propagation_tab_dragdrop"/>
+          <include name="accept_tab_dragdrop"/>
         </methods>
-      </class> <!-- testcases.Slider_Test -->
-      <class name="testcases.Accordian_Test">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="heading2"/>
-        </methods>
-      </class> <!-- testcases.Accordian_Test -->
-      <class name="testcases.Alerts_Test">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="handle_simple_alert"/>
-        </methods>
-      </class> <!-- testcases.Alerts_Test -->
+      </class> <!-- testcases.Droppable_Test -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

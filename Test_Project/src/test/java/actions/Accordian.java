@@ -1,6 +1,5 @@
 package actions;
 
-import java.time.Duration;
 
 import base.Base;
 import locators.Accordian_locators;
@@ -25,7 +24,7 @@ public class Accordian extends Base{
 	
 	public void verify_heading2_text() {
 		scroll_to_element(al.heading2Msg());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		waitImplicitly();
 		isTrue(al.heading2Msg().getText().contains("Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\""));
 	}
 	
@@ -36,7 +35,7 @@ public class Accordian extends Base{
 	
 	public void verify_heading3_text() {
 		scroll_to_element(al.heading3Msg());
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		waitImplicitly();
 		isTrue(al.heading3Msg().getText().contains("It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."));
 	}
 }

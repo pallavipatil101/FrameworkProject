@@ -2,8 +2,6 @@ package actions;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-
 import base.Base;
 import locators.DatePicker_locators;
 
@@ -15,13 +13,11 @@ public class DatePicker extends Base{
 	}
 	
 	public void select_month_calender1() {
-		Select select = new Select(dp.calender1MonthSelect());
-		select.selectByVisibleText("March");
+		select_Drop_Down(dp.calender1MonthSelect()).selectByVisibleText("March");
 	}
 	
 	public void select_year_calender1() {
-		Select select = new Select(dp.calender1YearSelect());
-		select.selectByVisibleText("1996");
+		select_Drop_Down(dp.calender1YearSelect()).selectByVisibleText("1996");
 	}
 	
 	public void select_date_calender1() {
