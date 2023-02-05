@@ -4,10 +4,11 @@ import org.openqa.selenium.WebElement;
 
 import base.Base;
 import locators.Sortable_locators;
+import utilities.CommonUtilities;
 
 public class Sortable extends Base{
 	Sortable_locators so = new Sortable_locators();
-	
+	CommonUtilities cu = new CommonUtilities();
 	public void switch_to_grid() {
 		for(WebElement tab : so.sortableTabsList())
 		{
@@ -19,7 +20,7 @@ public class Sortable extends Base{
 	}
 	
 	public void verify_grid_elements() {
-		isTrue(so.sortableGridElements().size() == 9);
+		cu.isTrue(so.sortableGridElements().size() == 9);
 	}
 	
 	public void switch_to_list() {
@@ -33,6 +34,6 @@ public class Sortable extends Base{
 	}
 	
 	public void verify_list_elements() {
-		isTrue(so.sortableListElements().size() == 6);
+		cu.isTrue(so.sortableListElements().size() == 6);
 	}
 }

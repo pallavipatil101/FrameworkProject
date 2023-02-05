@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import actions.TextBox;
 import actions.HomePage;
 import base.Base;
-import excel.utility.ExcelDataProvider;
+import utilities.ExcelDataProvider;
 
 public class Textbox_Test extends Base{
 	public TextBox tb = new TextBox();

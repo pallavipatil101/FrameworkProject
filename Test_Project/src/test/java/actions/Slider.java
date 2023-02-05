@@ -3,9 +3,10 @@ package actions;
 import org.testng.Assert;
 import base.Base;
 import locators.Slider_locators;
+import utilities.CommonUtilities;
 
 public class Slider extends Base{
-	
+	CommonUtilities cu = new CommonUtilities();
 	Slider_locators sl = new Slider_locators();
 	public String locationBefore;
 	public String locationAfter;
@@ -15,11 +16,11 @@ public class Slider extends Base{
 	}
 	
 	public void dragSlider() {
-		action().dragAndDropBy(sl.sliderButton(), 70, 0).build().perform();
+		cu.action().dragAndDropBy(sl.sliderButton(), 70, 0).build().perform();
 	}
 	
 	public void slider_location_after_drag() {
-		waitImplicitly();
+		cu.waitImplicitly();
 		locationAfter = sl.sliderValue().getAttribute("value");
 	}
 	

@@ -3,28 +3,30 @@ package actions;
 import org.openqa.selenium.WebElement;
 import base.Base;
 import locators.SelectMenu_locators;
+import utilities.CommonUtilities;
 
 public class SelectMenu extends Base{
 	SelectMenu_locators sm = new SelectMenu_locators();
+	CommonUtilities cu = new CommonUtilities();
 	
 	public void select_dropdown() {
-		select_Drop_Down(sm.selectDropDown()).selectByVisibleText("Aqua");
+		cu.select_Drop_Down(sm.selectDropDown()).selectByVisibleText("Aqua");
 	}
 	
 	public void standard_multi_select() {
-		select_Drop_Down(sm.standardMultiSelectDropDown()).selectByVisibleText("Volvo");
-		select_Drop_Down(sm.standardMultiSelectDropDown()).selectByVisibleText("Audi");
+		cu.select_Drop_Down(sm.standardMultiSelectDropDown()).selectByVisibleText("Volvo");
+		cu.select_Drop_Down(sm.standardMultiSelectDropDown()).selectByVisibleText("Audi");
 	}
 	
 	public void multi_select() {
-		scroll_to_element(sm.multiSelectDropDown());
+		cu.scroll_to_element(sm.multiSelectDropDown());
 		sm.multiSelectDropDown().click();
 		sm.blue().click();
 		sm.green().click();
 	}
 	
 	public void value_dropdown() {
-		scroll_to_element(sm.valueDropDown());
+		cu.scroll_to_element(sm.valueDropDown());
 		sm.valueDropDown().click();
 		for(WebElement val : sm.valueDropOptionsList())
 		{
@@ -41,7 +43,7 @@ public class SelectMenu extends Base{
 	}
 	
 	public void one_dropdown() {
-		scroll_to_element(sm.oneDropDown());
+		cu.scroll_to_element(sm.oneDropDown());
 		sm.oneDropDown().click();
 		for(WebElement val : sm.oneDropOptionsList())
 		{

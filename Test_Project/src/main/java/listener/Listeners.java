@@ -10,12 +10,14 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import base.Base;
 import extent.reporter.ExtentReporter;
+import utilities.CommonUtilities;
 
 public class Listeners extends Base implements ITestListener{
 	ExtentReports extentReport = ExtentReporter.getExtentReport();
 	ExtentTest extentTest;
 	ThreadLocal<ExtentTest> extentTestThread = new ThreadLocal<ExtentTest>();
 	public WebDriver driver = null;
+	CommonUtilities cu = new CommonUtilities();
 	
 	public void onTestStart(ITestResult result) {
 		extentTest = extentReport.createTest(result.getName()+" execution started");
@@ -30,10 +32,12 @@ public class Listeners extends Base implements ITestListener{
 
 	public void onTestFailure(ITestResult result) {
 		//extentTest.fail(result.getThrowable());	// to print cause of error/exception in report. without it itll show as pass
+		String testname = result.getName();
+		extentTestThread.get().log(Status.FAIL,testname+" Test Failed!");
 		extentTestThread.get().fail(result.getThrowable());
 		String testMethodName = result.getName();
 		try {
-			String screenshotPath = takeScreenshot(testMethodName);
+			String screenshotPath = cu.takeScreenshot(testMethodName);
 			extentTestThread.get().addScreenCaptureFromPath(screenshotPath, testMethodName);
 		} catch (IOException e) {
 			

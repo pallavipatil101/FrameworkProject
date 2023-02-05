@@ -2,8 +2,10 @@ package actions;
 
 import base.Base;
 import locators.ProgressBar_locators;
+import utilities.CommonUtilities;
 
 public class ProgressBar extends Base{
+	CommonUtilities cu = new CommonUtilities();
 	ProgressBar_locators ps = new ProgressBar_locators();
 	public String progressBefore;
 	
@@ -12,18 +14,18 @@ public class ProgressBar extends Base{
 	}
 	
 	public void start() {
-		scroll_to_element(ps.trackProgress());
-		action().moveToElement(ps.startStopBtn()).click().build().perform();
+		cu.scroll_to_element(ps.trackProgress());
+		cu.action().moveToElement(ps.startStopBtn()).click().build().perform();
 	}
 	
 	public void stop() {
-		waitImplicitly();
-		action().moveToElement(ps.startStopBtn()).click().build().perform();
+		cu.waitImplicitly();
+		cu.action().moveToElement(ps.startStopBtn()).click().build().perform();
 	}
 	
 	public void compare_progress() {
 		String progressAfter = ps.trackProgress().getAttribute("aria-valuenow");
-		verify_texts_notEqual(progressBefore, progressAfter);
+		cu.verify_texts_notEqual(progressBefore, progressAfter);
 		System.out.println(progressBefore+"---"+progressAfter);
 	}
 }

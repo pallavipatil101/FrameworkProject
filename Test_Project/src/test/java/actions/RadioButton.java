@@ -5,9 +5,10 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import base.Base;
 import locators.RadioButton_locators;
+import utilities.CommonUtilities;
 
 public class RadioButton extends Base{
-
+	CommonUtilities cu = new CommonUtilities();
 	RadioButton_locators rpl = new RadioButton_locators();
 	Logger log = LogManager.getLogger(RadioButton.class.getName());
 	
@@ -25,7 +26,7 @@ public class RadioButton extends Base{
 	}
 	
 	public void verify_Radio_Result() {
-		verify_texts_equal("Yes",rpl.radioButtonResult());
+		cu.verify_texts_equal("Yes",rpl.radioButtonResult());
 	}
 	
 	public void verify_Disabled_Radio() {

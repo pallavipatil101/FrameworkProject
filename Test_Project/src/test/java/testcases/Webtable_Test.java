@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import actions.WebTable;
 import actions.HomePage;
 import base.Base;
-import excel.utility.ExcelDataProvider;
+import utilities.ExcelDataProvider;
 
 public class Webtable_Test extends Base{
 	public WebTable wt = new WebTable();

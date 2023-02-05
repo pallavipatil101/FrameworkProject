@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import actions.HomePage;
 import actions.PracticeForm;
 import base.Base;
-import excel.utility.ExcelDataProvider;
+import utilities.ExcelDataProvider;
 
 public class PracticeForm_Test extends Base{
 	PracticeForm pf = new PracticeForm();

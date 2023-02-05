@@ -1,4 +1,4 @@
-package excel.utility;
+package utilities;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,9 +10,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelUtility {
+public class ExcelReader {
 	public  String path;
-	public String sheetName;
 	public  FileInputStream fin = null;
 	public  FileOutputStream fileOut =null;
 	private XSSFWorkbook workbook = null;
@@ -21,9 +20,8 @@ public class ExcelUtility {
 	private XSSFCell cell = null;
 	
 	
-	public ExcelUtility(String path, String sheetName) {		
-		this.path = path;
-		this.sheetName = sheetName;
+	public ExcelReader(String path) {		
+		this.path=path;
 		try {
 			fin = new FileInputStream(path);
 			workbook = new XSSFWorkbook(fin);
@@ -50,7 +48,7 @@ public class ExcelUtility {
 	
 	
 	//Return number of rows.
-	public int rowCount() {
+	public int rowCount(String sheetName) {
 		int index = workbook.getSheetIndex(sheetName);
 		if(index == -1)
 		{
@@ -65,7 +63,7 @@ public class ExcelUtility {
 	
 	
 	//Return number of columns.
-	public int columnCount() {
+	public int columnCount(String sheetName) {
 		
 		if(!doesSheetExist(sheetName)) {
 			 return -1;
@@ -141,6 +139,38 @@ public class ExcelUtility {
 	}
 
 	
+	// returns the data from a cell
+	public String getCellData(String sheetName,int rowNum,int colNum){
+		try{
+			if(rowNum <=0)
+				return "";
+				
+			int index = workbook.getSheetIndex(sheetName);
+			if(index==-1)
+				return "";
+						
+			sheet = workbook.getSheetAt(index);
+			row = sheet.getRow(rowNum);
+			if(row==null)
+				return "";
+				
+			cell = row.getCell(colNum);
+			if(cell==null)
+				return "";
+				
+			DataFormatter formatter = new DataFormatter();
+	        return formatter.formatCellValue(cell);
+				  
+		  }
+		catch(Exception e){
+			e.printStackTrace();
+			return "row "+rowNum+" or column "+colNum +" does not exist  in xls";
+		}
+	}
+	
+	
+	
+	//Returns data as string
 	public String getData(String sheetName, String colName, int rowNum)
 	{
 		try{

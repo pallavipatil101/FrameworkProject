@@ -44,7 +44,7 @@ public class Windows_Test extends Base{
 	}
 	
 	
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void new_msg_window() {
 		win.open_msg_window();
 		log.debug("Opened new window");

@@ -4,16 +4,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import base.Base;
 import locators.Windows_locators;
+import utilities.CommonUtilities;
 
 public class Windows extends Base{
 	Windows_locators wl = new Windows_locators();
+	CommonUtilities cu = new CommonUtilities();
 	
 	public void open_new_tab() {
 		wl.newTab().click();
 	}
 	
 	public void verify_newtab_heading() {
-		verify_texts_equal("This is a sample page", wl.newTabHeading());
+		cu.verify_texts_equal("This is a sample page", wl.newTabHeading());
 	}
 	
 	public void open_new_window() {
@@ -21,7 +23,7 @@ public class Windows extends Base{
 	}
 	
 	public void verify_newwindow_heading() {
-		verify_texts_equal("This is a sample page", wl.newWindowHeading());
+		cu.verify_texts_equal("This is a sample page", wl.newWindowHeading());
 		driver.close();
 	}
 	
@@ -30,8 +32,8 @@ public class Windows extends Base{
 	}
 		
 	public void verify_msgwindow_heading() {
-		waiting().until(ExpectedConditions.visibilityOf(wl.msgWindowHeading()));
-		verify_texts_equal("Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.", wl.msgWindowHeading());
+		cu.waiting().until(ExpectedConditions.visibilityOf(wl.msgWindowHeading()));
+		cu.verify_texts_equal("Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.", wl.msgWindowHeading());
 	}
 	
 	public void switch_to_newwindow() {

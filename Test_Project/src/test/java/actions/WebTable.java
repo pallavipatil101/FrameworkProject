@@ -4,11 +4,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import base.Base;
-import excel.utility.ExcelReader;
 import locators.WebTable_locators;
+import utilities.CommonUtilities;
+import utilities.ExcelReader;
 
 public class WebTable extends Base {
-	
+	CommonUtilities cu = new CommonUtilities();
 	WebTable_locators wpl = new WebTable_locators();
 	ExcelReader e = new ExcelReader(System.getProperty("user.dir")+"/src/test/resources/Data_DemoQA.xlsx");
 	
@@ -25,19 +26,19 @@ public class WebTable extends Base {
 	}
 	
 	public void edit_Row1() {
-		waiting().until(ExpectedConditions.elementToBeClickable(wpl.firstName()));
+		cu.waiting().until(ExpectedConditions.elementToBeClickable(wpl.firstName()));
 		wpl.firstName().clear();
-		send(wpl.firstName(), e.getCellData("Table", "Values", 1) );
+		cu.send(wpl.firstName(), e.getCellData("Table", "Values", 1) );
 		wpl.lastName().clear();
-		send(wpl.lastName(), e.getCellData("Table", "Values", 2));
+		cu.send(wpl.lastName(), e.getCellData("Table", "Values", 2));
 		wpl.email().clear();
-		send(wpl.email(), e.getCellData("Table", "Values", 3));
+		cu.send(wpl.email(), e.getCellData("Table", "Values", 3));
 		wpl.age().clear();
-		send(wpl.age(),e.getData("Table", "Values", 4));
+		cu.send(wpl.age(),e.getData("Table", "Values", 4));
 		wpl.salary().clear();
-		send(wpl.salary(), e.getData("Table", "Values", 5));
+		cu.send(wpl.salary(), e.getData("Table", "Values", 5));
 		wpl.department().clear();
-		send(wpl.department(), e.getCellData("Table", "Values", 6));
+		cu.send(wpl.department(), e.getCellData("Table", "Values", 6));
 	}
 	
 	public void submit_form() {
@@ -53,42 +54,42 @@ public class WebTable extends Base {
 	}
 	
 	public void edit_Row(String label, String value) {
-		waiting().until(ExpectedConditions.elementToBeClickable(wpl.firstName()));
+		cu.waiting().until(ExpectedConditions.elementToBeClickable(wpl.firstName()));
 		
 		if(label.contains("First"))
 		{
 			wpl.firstName().clear();
-			send(wpl.firstName(), value);			
+			cu.send(wpl.firstName(), value);			
 		}
 		
 		if(label.contains("Last"))
 		{
 			wpl.lastName().clear();
-			send(wpl.lastName(), value);	
+			cu.send(wpl.lastName(), value);	
 		}
 		
 		if(label.contains("mail"))
 		{
 			wpl.email().clear();
-			send(wpl.email(), value);			
+			cu.send(wpl.email(), value);			
 		}
 		
 		if(label.contains("age"))
 		{
 			wpl.age().clear();
-			send(wpl.age(), value);	
+			cu.send(wpl.age(), value);	
 		}
 		
 		if(label.contains("Salary"))
 		{
 			wpl.salary().clear();
-			send(wpl.salary(), value);	
+			cu.send(wpl.salary(), value);	
 		}
 		
 		if(label.contains("Depart"))
 		{
 			wpl.department().clear();
-			send(wpl.department(), value);	
+			cu.send(wpl.department(), value);	
 		}
 		
 		

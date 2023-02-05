@@ -1,96 +1,97 @@
 package actions;
 
 import base.Base;
-import excel.utility.ExcelReader;
 import locators.TextBox_locators;
+import utilities.CommonUtilities;
+import utilities.ExcelReader;
 
 public class TextBox extends Base{
-	
+	CommonUtilities cu = new CommonUtilities();
 	TextBox_locators tpl = new TextBox_locators();
 	ExcelReader e = new ExcelReader(System.getProperty("user.dir")+"/src/test/resources/Data_DemoQA.xlsx");
 	
 	public void verify_FullName_label() {
-		verify_texts_equal("Full Name", tpl.fullName_label());
+		cu.verify_texts_equal("Full Name", tpl.fullName_label());
 	}
 	
 	public void verify_Email_label() {
-		verify_texts_equal("Email", tpl.email_label());
+		cu.verify_texts_equal("Email", tpl.email_label());
 	}
 	
 	public void verify_Current_Address_Label() {
-		verify_texts_equal("Current Address", tpl.currentAddress_label());
+		cu.verify_texts_equal("Current Address", tpl.currentAddress_label());
 	}
 	
 	public void verify_Permanent_Address_Label() {
-		verify_texts_equal("Permanent Address", tpl.permanentAddress_label());
+		cu.verify_texts_equal("Permanent Address", tpl.permanentAddress_label());
 	}
 	
 	public void enter_FirstName(String label, String value) {
 		if(label.contains("Name"))
 		{
-			send(tpl.userName(), value);
+			cu.send(tpl.userName(), value);
 		}
 	}
 	
 	public void enter_Email(String label, String value) {
 		if(label.contains("Email"))
 		{
-			send(tpl.userEmail(), value);
+			cu.send(tpl.userEmail(), value);
 		}
 	}
 	
 	public void enter_CurrentAddress(String label, String value) {
 		if(label.contains("Current"))
 		{
-			send(tpl.currentAddress(), value);
+			cu.send(tpl.currentAddress(), value);
 		}
 	}
 	
 	public void enter_PermanentAddress(String label, String value) {
 		if(label.contains("Permanent"))
 		{
-			send(tpl.permanentAddress(), value);
+			cu.send(tpl.permanentAddress(), value);
 		}
 	}
 	
 	
 	public void click_Submit_Btn() {
-		scroll_to_element(tpl.submitBtn());
+		cu.scroll_to_element(tpl.submitBtn());
 		tpl.submitBtn().click();
 	}
 	
 	
 	public void verify_Submitted_Name() {
-		scroll_to_element(tpl.submittedCurrentAddress());
-		verify_texts_equal("Name:Pallavi Patil", tpl.submittedName());
+		cu.scroll_to_element(tpl.submittedCurrentAddress());
+		cu.verify_texts_equal("Name:Pallavi Patil", tpl.submittedName());
 	}
 	
 	public void verify_Submitted_Email() {
-		verify_texts_equal("Email:pallavi.patil@joshsoftware.com", tpl.submittedEmail());
+		cu.verify_texts_equal("Email:pallavi.patil@joshsoftware.com", tpl.submittedEmail());
 	}
 	
 	public void verify_Submitted_CurrentAddress() {
-		verify_texts_equal("Current Address :Pune", tpl.submittedCurrentAddress());
+		cu.verify_texts_equal("Current Address :Pune", tpl.submittedCurrentAddress());
 	}
 	
 	public void verify_Submitted_PermanentAddress() {
-		verify_texts_equal("Permananet Address :Miraj", tpl.submittedPermanentAddress());
+		cu.verify_texts_equal("Permananet Address :Miraj", tpl.submittedPermanentAddress());
 	}
 	
 	
 	
 	public void enter_UserData() {
-		send(tpl.userName(), "Pallavi Patil");
-		send(tpl.userEmail(), "pallavi.patil@joshsoftware.com");
-		send(tpl.currentAddress(), "Pune");
-		send(tpl.permanentAddress(), "Miraj");
+		cu.send(tpl.userName(), "Pallavi Patil");
+		cu.send(tpl.userEmail(), "pallavi.patil@joshsoftware.com");
+		cu.send(tpl.currentAddress(), "Pune");
+		cu.send(tpl.permanentAddress(), "Miraj");
 	}
 	
 	public void verify_Submitted_Data() {
-		scroll_to_element(tpl.submittedCurrentAddress());
-		verify_texts_equal("Name:Pallavi Patil", tpl.submittedName());
-		verify_texts_equal("Email:pallavi.patil@joshsoftware.com", tpl.submittedEmail());
-		verify_texts_equal("Current Address :Pune", tpl.submittedCurrentAddress());
-		verify_texts_equal("Permananet Address :Miraj", tpl.submittedPermanentAddress());
+		cu.scroll_to_element(tpl.submittedCurrentAddress());
+		cu.verify_texts_equal("Name:Pallavi Patil", tpl.submittedName());
+		cu.verify_texts_equal("Email:pallavi.patil@joshsoftware.com", tpl.submittedEmail());
+		cu.verify_texts_equal("Current Address :Pune", tpl.submittedCurrentAddress());
+		cu.verify_texts_equal("Permananet Address :Miraj", tpl.submittedPermanentAddress());
 	}
 }

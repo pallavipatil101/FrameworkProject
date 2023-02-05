@@ -3,49 +3,51 @@ package actions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import base.Base;
-import excel.utility.ExcelReader;
 import locators.PracticeForm_locators;
+import utilities.CommonUtilities;
+import utilities.ExcelReader;
 
 public class PracticeForm extends Base{
 	
+	CommonUtilities cu = new CommonUtilities();
 	ExcelReader e = new ExcelReader(System.getProperty("user.dir")+"/src/test/resources/Data_DemoQA.xlsx");
 	PracticeForm_locators pfl = new PracticeForm_locators();
 	public Select select;
 	
 	public void verify_name_label() {
-		verify_texts_equal("Name", pfl.name_label() );
+		cu.verify_texts_equal("Name", pfl.name_label() );
 	}
 	
 	public void verify_email_label() {
-		verify_texts_equal("Email", pfl.email_label() );
+		cu.verify_texts_equal("Email", pfl.email_label() );
 	}
 	
 	public void verify_gender_label() {
-		verify_texts_equal("Gender", pfl.gender_label() );
+		cu.verify_texts_equal("Gender", pfl.gender_label() );
 	}
 	
 	public void verify_mobile_label() {
-		verify_texts_equal("Mobile(10 Digits)", pfl.mobile_label() );
+		cu.verify_texts_equal("Mobile(10 Digits)", pfl.mobile_label() );
 	}
 	
 	public void verify_birthdate_label() {
-		verify_texts_equal("Date of Birth", pfl.birthdate_label() );
+		cu.verify_texts_equal("Date of Birth", pfl.birthdate_label() );
 	}
 	
 	public void verify_subjects_label() {
-		verify_texts_equal("Subjects", pfl.subject_label() );
+		cu.verify_texts_equal("Subjects", pfl.subject_label() );
 	}
 	
 	public void verify_hobbies_label() {
-		verify_texts_equal("Hobbies", pfl.hobbies_label() );
+		cu.verify_texts_equal("Hobbies", pfl.hobbies_label() );
 	}
 	
 	public void verify_photo_label() {
-		verify_texts_equal("Picture", pfl.photo_label() );
+		cu.verify_texts_equal("Picture", pfl.photo_label() );
 	}
 	
 	public void verify_address_label() {
-		verify_texts_equal("Current Address", pfl.address_label() );
+		cu.verify_texts_equal("Current Address", pfl.address_label() );
 	}
 	
 	/*public void enter_first_name(String label, String value) {
@@ -84,24 +86,24 @@ public class PracticeForm extends Base{
 	}*/
 	
 	public void enter_first_name() {
-		send(pfl.firstName(), e.getCellData("Form", "Values", 1));
+		cu.send(pfl.firstName(), e.getCellData("Form", "Values", 1));
 	}
 	
 	public void enter_last_name() {
-		send(pfl.lastName(), e.getCellData("Form", "Values", 2));
+		cu.send(pfl.lastName(), e.getCellData("Form", "Values", 2));
 	}
 	
 	public void enter_email() {
-		send(pfl.email(), e.getCellData("Form", "Values", 3));
+		cu.send(pfl.email(), e.getCellData("Form", "Values", 3));
 	}
 	
 	public void enter_mobile() {
-		send(pfl.mobile(), e.getData("Form", "Values", 4));
+		cu.send(pfl.mobile(), e.getData("Form", "Values", 4));
 	}
 	
 	public void enter_address() {
-		scroll_to_element(pfl.address());
-		send(pfl.address(), e.getCellData("Form", "Values", 6));
+		cu.scroll_to_element(pfl.address());
+		cu.send(pfl.address(), e.getCellData("Form", "Values", 6));
 	}
 	
 	
@@ -113,19 +115,19 @@ public class PracticeForm extends Base{
 				if(!g.isSelected())
 				{
 					
-					action().moveToElement(g).click().build().perform();
+					cu.action().moveToElement(g).click().build().perform();
 				}
 			}
 		}
 	}
 	
 	public void select_birthdate() {
-		scroll_to_element(pfl.address());
+		cu.scroll_to_element(pfl.address());
 		pfl.calender().click();
-		select_Drop_Down(pfl.birthMonthDrop()).selectByVisibleText("March");
-		select_Drop_Down(pfl.birthYearDrop()).selectByVisibleText("1996");
+		cu.select_Drop_Down(pfl.birthMonthDrop()).selectByVisibleText("March");
+		cu.select_Drop_Down(pfl.birthYearDrop()).selectByVisibleText("1996");
 		
-		action().moveToElement(pfl.birthDate()).click().build().perform();
+		cu.action().moveToElement(pfl.birthDate()).click().build().perform();
 	}
 	
 	public void select_hobbies() {
@@ -135,7 +137,7 @@ public class PracticeForm extends Base{
 			{
 				if(!hobby.isSelected())
 				{
-					action().moveToElement(hobby).click().build().perform();
+					cu.action().moveToElement(hobby).click().build().perform();
 					
 				}
 			}
@@ -143,15 +145,15 @@ public class PracticeForm extends Base{
 	}
 	
 	public void upload_photo() {
-		send(pfl.uploadPhoto(), System.getProperty("user.dir")+"/src/test/resources/UploadPhoto.jpeg");
+		cu.send(pfl.uploadPhoto(), System.getProperty("user.dir")+"/src/test/resources/UploadPhoto.jpeg");
 	}
 	
 	public void select_subjects() {
-		scroll_to_element(pfl.subject());
-		action().moveToElement(pfl.subject()).click().sendKeys("m").build().perform();
-		scroll_to_element(pfl.maths());
-		action().moveToElement(pfl.maths()).click().build().perform();
-		action().moveToElement(pfl.subject()).click().sendKeys("m").build().perform();
-		action().moveToElement(pfl.chemistry()).click().build().perform();
+		cu.scroll_to_element(pfl.subject());
+		cu.action().moveToElement(pfl.subject()).click().sendKeys("m").build().perform();
+		cu.scroll_to_element(pfl.maths());
+		cu.action().moveToElement(pfl.maths()).click().build().perform();
+		cu.action().moveToElement(pfl.subject()).click().sendKeys("m").build().perform();
+		cu.action().moveToElement(pfl.chemistry()).click().build().perform();
 	}
 }

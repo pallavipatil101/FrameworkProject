@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.BrokenLinks_Test">
+      <class name="testcases.Accordian_Test">
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="findBrokenImages"/>
+          <include name="heading1"/>
         </methods>
-      </class> <!-- testcases.BrokenLinks_Test -->
+      </class> <!-- testcases.Accordian_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

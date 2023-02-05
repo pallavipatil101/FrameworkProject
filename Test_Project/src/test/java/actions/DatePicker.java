@@ -4,20 +4,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import base.Base;
 import locators.DatePicker_locators;
+import utilities.CommonUtilities;
 
 public class DatePicker extends Base{
 	DatePicker_locators dp = new DatePicker_locators();
+	CommonUtilities cu = new CommonUtilities();
 	
 	public void click_on_calender1() {
 		dp.calender1().click();
 	}
 	
 	public void select_month_calender1() {
-		select_Drop_Down(dp.calender1MonthSelect()).selectByVisibleText("March");
+		cu.select_Drop_Down(dp.calender1MonthSelect()).selectByVisibleText("March");
 	}
 	
 	public void select_year_calender1() {
-		select_Drop_Down(dp.calender1YearSelect()).selectByVisibleText("1996");
+		cu.select_Drop_Down(dp.calender1YearSelect()).selectByVisibleText("1996");
 	}
 	
 	public void select_date_calender1() {
@@ -33,7 +35,7 @@ public class DatePicker extends Base{
 		dp.calender2MonthBtn().click();
 		for(WebElement m : dp.calender2MonthList())
 		{
-			waiting().until(ExpectedConditions.elementToBeClickable(m));
+			cu.waiting().until(ExpectedConditions.elementToBeClickable(m));
 			if(m.getText().equals("March"))
 			{
 				m.click();
@@ -51,7 +53,7 @@ public class DatePicker extends Base{
 		
 		for(WebElement m : dp.calender2YearList())
 		{
-			waiting().until(ExpectedConditions.elementToBeClickable(m));
+			cu.waiting().until(ExpectedConditions.elementToBeClickable(m));
 			if(m.getText().equals("1996"))
 			{
 				m.click();

@@ -7,7 +7,7 @@
   	
   <test name="DemoQA">
     <classes>
-      <class name="testcases.Accordian_Test"/>
+      <class name="testcases.Windows_Test"/>
     </classes>
   </test> 
 </suite> 
